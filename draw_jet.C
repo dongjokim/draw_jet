@@ -190,7 +190,7 @@ void DrawArrow(){
         at->SetPickable(kTRUE );   // for arrow
     
         TEveText *pt_text = new TEveText(Form("%.1f",t.Pt()));
-        pt_text->SetFontSize(1); 
+        //pt_text->SetFontSize(1); 
         pt_text->RefMainTrans().SetPos(at->GetVector());
   
         gElementList->AddElement( pt_text );
