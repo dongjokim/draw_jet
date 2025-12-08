@@ -1,0 +1,3036 @@
+Loading O2Physics/latest
+  Loading requirement: BASE/1.0 GLFW/3.3.2-local1 Python-modules/1.0-local1
+    curl/7.70.0-local1 boost/v1.83.0-alice2-local1 Ppconsul/v0.2.3-local1
+    Configuration/v2.8.0-local1 protobuf/v29.3-local1 utf8proc/v2.6.1-local1
+    xsimd/8.1.0-local1 arrow/v20.0.0-alice1-local1 lhapdf/v6.5.2-local1
+    nlohmann_json/v3.11.3-local1 HepMC/HEPMC_02_06_10-local1
+    pythia/v8315-alice1-local1 FFTW3/v3.3.9-local1 AliEn-Runtime/v2-19-le-local1
+    Vc/1.4.5-local1 XRootD/v5.8.4-local1 TBB/v2021.5.0-local1
+    ROOT/v6-36-04-alice2-local1 VMC/v2-0-local1 MCStepLogger/v0.6.1-local1
+    DebugGUI/v0.8.0-local1 pythia6/428-alice2-local1
+    xercesc/Xerces-C_3_2_5-local1 GEANT4/v11.2.0-alice1-local1 vgm/v5-3-local1
+    GEANT4_VMC/v6-6-update1-p3-local1 GEANT3/v4-4-local1 simulation/v1.0-local1
+    generators/v1.0-local1 fmt/11.1.2-local1 FairLogger/v2.1.0-local1
+    FairRoot/v18.4.9-alice3-local1 HepMC3/3.3.0-local1
+    libInfoLogger/v2.8.3-local1 Monitoring/v3.19.8-local1
+    Common-O2/v1.6.3-local1 ms_gsl/4.0.0-local1 xjalienfs/1.6.8-local1
+    libwebsockets/v4.3.2-local1 JAliEn-ROOT/0.7.15-local1 cgal/4.12.2-local1
+    GMP/v6.2.1-local1 fastjet/v3.4.1_1.052-alice3-local1
+    libjalienO2/0.1.5-local1 ZeroMQ/v4.3.5-local1 FairMQ/v1.10.0-local1
+    re2/2024-07-02-local1 abseil/20240722.0-local1 onnx/v1.17.0-alice2-local1
+    flatbuffers/v24.3.25-local1 ONNXRuntime/v1.22.0-local1
+    RapidJSON/v1.1.0-alice2-local1 MLModels/20220530-local1 c-ares/1.18.1-local1
+    grpc/v1.71.0-local1 bookkeeping-api/v1.9.2-local1 O2/dev-local1
+    KFParticle/v1.1-7-local1 AliEn-CAs/v1-local1
+========================================
+Pythia Jet Correlation Analysis Workflow
+========================================
+Number of events: 1000000
+Working directory: /Users/djkim/Documents/GitHub/draw_jet
+
+========================================
+Step 1: Generating Pythia Events
+========================================
+Warning in <TFile::Init>: no StreamerInfo found in /Users/djkim/alice/sw/osx_arm64/VMC/v2-0-local1/lib/libVMCLibrary_rdict.pcm therefore preventing schema evolution when reading this file. The file was produced with ROOT version 6.35.01, while the current version is 6.36.04
+Error in <TMacOSXSystem::Load>: version mismatch, /Users/djkim/alice/sw/osx_arm64/O2Physics/master-local1/lib/libO2PhysicsPWGJECore.dylib = 63501, ROOT = 63604
+Error in <TInterpreter::TCling::AutoLoad>: failure loading library libO2PhysicsPWGJECore.dylib for JetFinder
+In file included from G__O2PhysicsPWGJECore dictionary payload:95:
+In file included from /Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceArea.hh:34:
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceAreaBase.hh:48:40: error: base class has incomplete type
+class ClusterSequenceAreaBase : public ClusterSequence {
+                                ~~~~~~~^~~~~~~~~~~~~~~
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/PseudoJetStructureBase.hh:43:7: note: forward declaration of 'fastjet::ClusterSequence'
+class ClusterSequence;
+      ^
+In file included from G__O2PhysicsPWGJECore dictionary payload:95:
+In file included from /Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceArea.hh:34:
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceAreaBase.hh:55:10: error: unknown type name 'JetDefinition'
+          const JetDefinition & jet_def_in,
+                ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceAreaBase.hh:137:16: error: use of undeclared identifier 'jet_def'
+    double R = jet_def().R();
+               ^
+In file included from G__O2PhysicsPWGJECore dictionary payload:95:
+In file included from /Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceArea.hh:35:
+In file included from /Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveArea.hh:37:
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:64:17: error: unknown type name 'JetDefinition'
+          const JetDefinition & jet_def_in,
+                ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:74:17: error: unknown type name 'JetDefinition'
+          const JetDefinition & jet_def_in,
+                ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:87:17: error: unknown type name 'JetDefinition'
+          const JetDefinition & jet_def_in,
+                ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:180:17: error: unknown type name 'JetDefinition'
+          const JetDefinition & jet_def_in,
+                ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:194:5: error: use of undeclared identifier '_jets'
+    _jets.push_back(mom);
+    ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:198:21: error: use of undeclared identifier '_jets'
+  _initial_hard_n = _jets.size();
+                    ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:202:5: error: use of undeclared identifier '_jets'
+    _jets.reserve((_jets.size()+ghost_spec->n_ghosts()));
+    ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:202:20: error: use of undeclared identifier '_jets'
+    _jets.reserve((_jets.size()+ghost_spec->n_ghosts()));
+                   ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:205:5: error: use of undeclared identifier '_jets'
+    _jets.reserve(_jets.size()+ghosts->size());
+    ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:205:19: error: use of undeclared identifier '_jets'
+    _jets.reserve(_jets.size()+ghosts->size());
+                  ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:211:30: error: use of undeclared identifier '_jets'
+    for (unsigned j = 0; j < _jets.size(); j++) {
+                             ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:213:11: error: use of undeclared identifier '_jets'
+               j,_jets[j].rap(),_jets[j].phi_02pi(),_jets[j].kt2());
+                 ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:213:26: error: use of undeclared identifier '_jets'
+               j,_jets[j].rap(),_jets[j].phi_02pi(),_jets[j].kt2());
+                                ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:213:46: error: use of undeclared identifier '_jets'
+               j,_jets[j].rap(),_jets[j].phi_02pi(),_jets[j].kt2());
+                                                    ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:221:3: error: use of undeclared identifier '_jets'
+  _jets.reserve(_jets.size()*2); //GPS tmp removed
+  ^
+/Users/djkim/alice/sw/osx_arm64/fastjet/v3.4.1_1.052-alice3-local1/include/fastjet/ClusterSequenceActiveAreaExplicitGhosts.hh:221:17: error: use of undeclared identifier '_jets'
+  _jets.reserve(_jets.size()*2); //GPS tmp removed
+                ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+Error in <TInterpreter::AutoParse>: Error parsing payload code for class JetFinder with content:
+
+#line 1 "G__O2PhysicsPWGJECore dictionary payload"
+
+#ifndef BOOST_ERROR_CODE_HEADER_ONLY
+  #define BOOST_ERROR_CODE_HEADER_ONLY 1
+#endif
+#ifndef BOOST_ASIO_HAS_HAS_STD_CHRONO
+  #define BOOST_ASIO_HAS_HAS_STD_CHRONO 1
+#endif
+#ifndef FAIRMQ_HAS_STD_FILESYSTEM
+  #define FAIRMQ_HAS_STD_FILESYSTEM 1
+#endif
+#ifndef FAIRMQ_HAS_STD_PMR
+  #define FAIRMQ_HAS_STD_PMR 0
+#endif
+#ifndef BOOST_CONTAINER_NO_LIB
+  #define BOOST_CONTAINER_NO_LIB 1
+#endif
+#ifndef BOOST_CONTAINER_DYN_LINK
+  #define BOOST_CONTAINER_DYN_LINK 1
+#endif
+#ifndef BOOST_PROGRAM_OPTIONS_NO_LIB
+  #define BOOST_PROGRAM_OPTIONS_NO_LIB 1
+#endif
+#ifndef BOOST_PROGRAM_OPTIONS_DYN_LINK
+  #define BOOST_PROGRAM_OPTIONS_DYN_LINK 1
+#endif
+#ifndef BOOST_FILESYSTEM_NO_LIB
+  #define BOOST_FILESYSTEM_NO_LIB 1
+#endif
+#ifndef BOOST_FILESYSTEM_DYN_LINK
+  #define BOOST_FILESYSTEM_DYN_LINK 1
+#endif
+#ifndef BOOST_ATOMIC_NO_LIB
+  #define BOOST_ATOMIC_NO_LIB 1
+#endif
+#ifndef BOOST_ATOMIC_DYN_LINK
+  #define BOOST_ATOMIC_DYN_LINK 1
+#endif
+#ifndef BOOST_REGEX_NO_LIB
+  #define BOOST_REGEX_NO_LIB 1
+#endif
+#ifndef BOOST_REGEX_DYN_LINK
+  #define BOOST_REGEX_DYN_LINK 1
+#endif
+#ifndef FMT_SHARED
+  #define FMT_SHARED 1
+#endif
+#ifndef ROOT_SUPPORT_CLAD
+  #define ROOT_SUPPORT_CLAD 1
+#endif
+#ifndef DPL_ENABLE_BACKTRACE
+  #define DPL_ENABLE_BACKTRACE 1
+#endif
+#ifndef BOOST_IOSTREAMS_NO_LIB
+  #define BOOST_IOSTREAMS_NO_LIB 1
+#endif
+#ifndef BOOST_IOSTREAMS_DYN_LINK
+  #define BOOST_IOSTREAMS_DYN_LINK 1
+#endif
+#ifndef RANS_ENABLE_JSON
+  #define RANS_ENABLE_JSON 1
+#endif
+#ifndef HAVE_FASTJET
+  #define HAVE_FASTJET 1
+#endif
+#ifndef BOOST_SERIALIZATION_NO_LIB
+  #define BOOST_SERIALIZATION_NO_LIB 1
+#endif
+#ifndef BOOST_SERIALIZATION_DYN_LINK
+  #define BOOST_SERIALIZATION_DYN_LINK 1
+#endif
+
+#define _BACKWARD_BACKWARD_WARNING_H
+// Inline headers
+// Copyright 2019-2020 CERN and copyright holders of ALICE O2.
+// See https://alice-o2.web.cern.ch/copyright for details of the copyright holders.
+// All rights not expressly granted are reserved.
+//
+// This software is distributed under the terms of the GNU General Public
+// License v3 (GPL Version 3), copied verbatim in the file "COPYING".
+//
+// In applying this license CERN does not waive the privileges and immunities
+// granted to it by virtue of its status as an Intergovernmental Organization
+// or submit itself to any jurisdiction.
+
+// jet finder task
+//
+// Authors: Nima Zardoshti, Jochen Klein
+/// \author Nima Zardoshti <nima.zardoshti@cern.ch>
+/// \author Jochen Klein <jochen.klein@cern.ch>
+
+#ifndef PWGJE_CORE_JETFINDER_H_
+#define PWGJE_CORE_JETFINDER_H_
+
+#include <fastjet/AreaDefinition.hh>
+#include <fastjet/ClusterSequenceArea.hh>
+#include <fastjet/GhostedAreaSpec.hh>
+#include <fastjet/JetDefinition.hh>
+#include <fastjet/PseudoJet.hh>
+#include <fastjet/Selector.hh>
+
+#include <Rtypes.h>
+
+#include <vector>
+
+#include <math.h>
+
+enum class JetType {
+  full = 0,
+  charged = 1,
+  neutral = 2,
+};
+
+class JetFinder
+{
+
+ public:
+  /// Performs jet finding
+  /// \note the input particle and jet lists are passed by reference
+  /// \param inputParticles vector of input particles/tracks
+  /// \param jets veector of jets to be filled
+  /// \return ClusterSequenceArea object needed to access constituents
+  // fastjet::ClusterSequenceArea findJets(std::vector<fastjet::PseudoJet> &inputParticles, std::vector<fastjet::PseudoJet> &jets);
+
+  float phiMin = 0.;
+  float phiMax = 2. * M_PI;
+  float etaMin = -.9;
+  float etaMax = .9;
+
+  float jetR = .4;
+  float jetPtMin = 0.;
+  float jetPtMax = 1000.;
+  float jetPhiMin = 0.;
+  float jetPhiMax = 2. * M_PI;
+  float jetEtaMin = -99.;
+  float jetEtaMax = 99.;
+  bool jetEtaDefault = false;
+
+  float ghostEtaMin = -.9;
+  float ghostEtaMax = .9;
+  float ghostArea = .005;
+  int ghostRepeatN = 1;
+  double ghostktMean = 1.e-100;
+  float gridScatter = 1.;
+  float ktScatter = .1;
+
+  bool isReclustering = false;
+  bool isTriggering = false;
+
+  fastjet::JetAlgorithm algorithm = fastjet::antikt_algorithm;
+  fastjet::RecombinationScheme recombScheme = fastjet::E_scheme;
+  fastjet::Strategy strategy = fastjet::Best;
+  fastjet::AreaType areaType = fastjet::active_area;
+  fastjet::GhostedAreaSpec ghostAreaSpec;
+  fastjet::JetDefinition jetDef;
+  fastjet::AreaDefinition areaDef;
+  fastjet::Selector selJets;
+  fastjet::Selector selGhosts;
+  double fastjetExtraParam = -99.0;
+
+  /// Sets the jet finding parameters
+  void setParams();
+
+  /// Performs jet finding
+  /// \note the input particle and jet lists are passed by reference
+  /// \param inputParticles vector of input particles/tracks
+  /// \param jets veector of jets to be filled
+  /// \return ClusterSequenceArea object needed to access constituents
+  fastjet::ClusterSequenceArea findJets(std::vector<fastjet::PseudoJet>& inputParticles, std::vector<fastjet::PseudoJet>& jets); // ideally find a way of passing the cluster sequence as a reeference
+
+ private:
+  ClassDefNV(JetFinder, 1);
+};
+
+#endif // PWGJE_CORE_JETFINDER_H_
+// Copyright 2019-2020 CERN and copyright holders of ALICE O2.
+// See https://alice-o2.web.cern.ch/copyright for details of the copyright holders.
+// All rights not expressly granted are reserved.
+//
+// This software is distributed under the terms of the GNU General Public
+// License v3 (GPL Version 3), copied verbatim in the file "COPYING".
+//
+// In applying this license CERN does not waive the privileges and immunities
+// granted to it by virtue of its status as an Intergovernmental Organization
+// or submit itself to any jurisdiction.
+
+/// \file JetUtilities.h
+/// \brief Jet related utilities
+///
+/// \author Raymond Ehlers <raymond.ehlers@cern.ch>, ORNL
+/// \author Nima Zardoshti <nima.zardoshti@cern.ch>
+
+#ifndef PWGJE_CORE_JETUTILITIES_H_
+#define PWGJE_CORE_JETUTILITIES_H_
+
+#include "Common/Core/RecoDecay.h"
+
+#include <TKDTree.h>
+
+#include <algorithm>
+#include <cmath>
+#include <cstddef>
+#include <limits>
+#include <stdexcept>
+#include <tuple>
+#include <vector>
+
+#include <math.h>
+
+namespace jetutilities
+{
+
+/**
+ * Match clusters and tracks.
+ *
+ * Match cluster with tracks, where maxNumberMatches are considered in dR=maxMatchingDistance.
+ * If no unique match was found for a jet, an index of -1 is stored.
+ * The same map is created for clusters matched to tracks e.g. for electron analyses.
+ *
+ * @param clusterPhi cluster collection phi.
+ * @param clusterEta cluster collection eta.
+ * @param trackPhi track collection phi.
+ * @param trackEta track collection eta.
+ * @param maxMatchingDistance Maximum matching distance.
+ * @param maxNumberMatches Maximum number of matches (e.g. 5 closest).
+ *
+ * @returns (cluster to track index map, track to cluster index map)
+ */
+template <typename T>
+std::tuple<std::vector<std::vector<int>>, std::vector<std::vector<int>>> MatchClustersAndTracks(
+  std::vector<T>& clusterPhi,
+  std::vector<T>& clusterEta,
+  std::vector<T>& trackPhi,
+  std::vector<T>& trackEta,
+  double maxMatchingDistance,
+  int maxNumberMatches)
+{
+  // test
+  // Validation
+  const std::size_t nClusters = clusterEta.size();
+  const std::size_t nTracks = trackEta.size();
+  if (!(nClusters && nTracks)) {
+    // There are no jets, so nothing to be done.
+    return std::make_tuple(std::vector<std::vector<int>>(nClusters, std::vector<int>(maxNumberMatches, -1)), std::vector<std::vector<int>>(nTracks, std::vector<int>(maxNumberMatches, -1)));
+  }
+  // Input sizes must match
+  if (clusterPhi.size() != clusterEta.size()) {
+    throw std::invalid_argument("cluster collection eta and phi sizes don't match. Check the inputs.");
+  }
+  if (trackPhi.size() != trackEta.size()) {
+    throw std::invalid_argument("track collection eta and phi sizes don't match. Check the inputs.");
+  }
+
+  // Build the KD-trees using vectors
+  // We build two trees:
+  // treeBase, which contains the base collection.
+  // treeTag, which contains the tag collection.
+  // The trees are built to match in two dimensions (eta, phi)
+  TKDTree<int, T> treeCluster(clusterEta.size(), 2, 1), treeTrack(trackEta.size(), 2, 1);
+  // By utilizing SetData, we can avoid having to copy the data again.
+  treeCluster.SetData(0, clusterEta.data());
+  treeCluster.SetData(1, clusterPhi.data());
+  treeCluster.Build();
+  treeTrack.SetData(0, trackEta.data());
+  treeTrack.SetData(1, trackPhi.data());
+  treeTrack.Build();
+
+  // Storage for the cluster matching indices.
+  std::vector<std::vector<int>> matchIndexTrack(nClusters, std::vector<int>(maxNumberMatches, -1));
+  std::vector<std::vector<int>> matchIndexCluster(nTracks, std::vector<int>(maxNumberMatches, -1));
+
+  // Find the track closest to each cluster.
+  for (std::size_t iCluster = 0; iCluster < nClusters; iCluster++) {
+    T point[2] = {clusterEta[iCluster], clusterPhi[iCluster]};
+    int index[50];  // size 50 for safety
+    T distance[50]; // size 50 for safery
+    std::fill_n(index, 50, -1);
+    std::fill_n(distance, 50, std::numeric_limits<T>::max());
+    treeTrack.FindNearestNeighbors(point, maxNumberMatches, index, distance);
+    // test whether indices are matching:
+    matchIndexTrack[iCluster] = std::vector<int>(maxNumberMatches);
+    for (int m = 0; m < maxNumberMatches; m++) {
+      if (index[m] >= 0 && distance[m] < maxMatchingDistance) {
+        matchIndexTrack[iCluster][m] = index[m];
+      } else {
+        // no match or no more matches found, fill -1
+        matchIndexTrack[iCluster][m] = -1;
+      }
+    }
+  }
+
+  // Find the base jet closest to each tag jet
+  for (std::size_t iTrack = 0; iTrack < nTracks; iTrack++) {
+    T point[2] = {trackEta[iTrack], trackPhi[iTrack]};
+    int index[50];  // size 50 for safety
+    T distance[50]; // size 50 for safery
+    std::fill_n(index, 50, -1);
+    std::fill_n(distance, 50, std::numeric_limits<T>::max());
+    treeCluster.FindNearestNeighbors(point, maxNumberMatches, index, distance);
+    matchIndexCluster[iTrack] = std::vector<int>(maxNumberMatches);
+    // loop over maxNumberMatches closest matches
+    for (int m = 0; m < maxNumberMatches; m++) {
+      if (index[m] >= 0 && distance[m] < maxMatchingDistance) {
+        matchIndexCluster[iTrack][m] = index[m];
+      } else {
+        // no match jet or no more matches found, fill -1
+        matchIndexCluster[iTrack][m] = -1;
+      }
+    }
+  }
+  return std::make_tuple(matchIndexTrack, matchIndexCluster);
+}
+
+template <typename T, typename U>
+float deltaR(T const& A, U const& B)
+{
+  float dPhi = RecoDecay::constrainAngle(A.phi() - B.phi(), -M_PI);
+  float dEta = A.eta() - B.eta();
+
+  return std::sqrt(dEta * dEta + dPhi * dPhi);
+}
+// same as deltaR but explicit specification of the eta and phi components
+template <typename T, typename U, typename V, typename W>
+float deltaR(T const& eta1, U const& phi1, V const& eta2, W const& phi2)
+{
+  float dPhi = RecoDecay::constrainAngle(phi1 - phi2, -M_PI);
+  float dEta = eta1 - eta2;
+
+  return std::sqrt(dEta * dEta + dPhi * dPhi);
+}
+}; // namespace jetutilities
+
+#endif // PWGJE_CORE_JETUTILITIES_H_
+// Copyright 2019-2020 CERN and copyright holders of ALICE O2.
+// See https://alice-o2.web.cern.ch/copyright for details of the copyright holders.
+// All rights not expressly granted are reserved.
+//
+// This software is distributed under the terms of the GNU General Public
+// License v3 (GPL Version 3), copied verbatim in the file "COPYING".
+//
+// In applying this license CERN does not waive the privileges and immunities
+// granted to it by virtue of its status as an Intergovernmental Organization
+// or submit itself to any jurisdiction.
+
+/// \file FastJetUtilities.h
+/// \brief Jet related utilities that require fastjet
+///
+/// \author Nima Zardoshti <nima.zardoshti@cern.ch>
+
+#ifndef PWGJE_CORE_FASTJETUTILITIES_H_
+#define PWGJE_CORE_FASTJETUTILITIES_H_
+
+#include <fastjet/PseudoJet.hh>
+
+#include <cmath>
+#include <vector>
+
+enum class JetConstituentStatus {
+  track = 0,
+  cluster = 1,
+  candidate = 2
+};
+
+namespace fastjetutilities
+{
+
+static constexpr float mPion = 0.139; // TDatabasePDG::Instance()->GetParticle(211)->Mass(); //can be removed when pion mass becomes default for unidentified tracks
+
+// Class defined to store additional info which is passed to the FastJet object
+class fastjet_user_info : public fastjet::PseudoJet::UserInfoBase
+{
+  int status; // the status of each particle (Options are: TrueParticle (final state particles in generator event which arent special), HFParticle (heavy-flavour particle of interest in generator event), ThermalParticle (particles belonging to the thermal backgound), DecaySisterParticle (other particles poduced in the decay resulting in a non-prompt heavy-flavour particle of interest))
+  int index;  // a number unique to each particle in the event
+
+ public:
+  fastjet_user_info()
+  {
+    status = -9;
+    index = -9;
+  }
+  fastjet_user_info(int _status, int _index)
+  {
+    status = _status;
+    index = _index;
+  }
+  ~fastjet_user_info() = default;
+  void setStatus(int set) { status = set; }
+  void setIndex(int set) { index = set; }
+  int getStatus() const { return status; }
+  int getIndex() const { return index; }
+};
+
+/**
+ * Set the fastjet_user_info object when filling the jet constituents.
+ *
+ * @param constituents vector of constituents to be clustered.
+ * @param index global index of constituent
+ * @param status status of constituent type
+ */
+
+void setFastJetUserInfo(std::vector<fastjet::PseudoJet>& constituents, int index = -99999999, int status = static_cast<int>(JetConstituentStatus::track));
+
+/**
+ * Add track as a pseudojet object to the fastjet vector
+ *
+ * @param constituent constituent to be added
+ * @param constituents vector of constituents
+ * @param index global index of constituent
+ * @param status status of constituent type
+ * @param status mass hypothesis for constituent
+ */
+
+template <typename T>
+void fillTracks(const T& constituent, std::vector<fastjet::PseudoJet>& constituents, int index = -99999999, int status = static_cast<int>(JetConstituentStatus::track), float mass = mPion)
+{
+  if (status == static_cast<int>(JetConstituentStatus::track) || status == static_cast<int>(JetConstituentStatus::candidate)) {
+    // auto p = std::sqrt((constituent.px() * constituent.px()) + (constituent.py() * constituent.py()) + (constituent.pz() * constituent.pz()));
+    auto energy = std::sqrt((constituent.p() * constituent.p()) + (mass * mass));
+    constituents.emplace_back(constituent.px(), constituent.py(), constituent.pz(), energy);
+  }
+  setFastJetUserInfo(constituents, index, status);
+}
+
+/**
+ * Add cluster as a pseudojet object to the fastjet vector
+ *
+ * @param constituent constituent to be added
+ * @param constituents vector of constituents
+ * @param index global index of constituent
+ * @param status status of constituent type
+ */
+
+template <typename T>
+void fillClusters(const T& constituent, std::vector<fastjet::PseudoJet>& constituents, int index = -99999999, int hadronicCorrectionType = 0, int status = static_cast<int>(JetConstituentStatus::cluster))
+{
+  if (status == static_cast<int>(JetConstituentStatus::cluster)) {
+    float constituentEnergy = 0.0;
+    if (hadronicCorrectionType == 0) {
+      constituentEnergy = constituent.energy();
+    }
+    if (hadronicCorrectionType == 1) {
+      constituentEnergy = constituent.energyCorrectedOneTrack1();
+    }
+    if (hadronicCorrectionType == 2) {
+      constituentEnergy = constituent.energyCorrectedOneTrack2();
+    }
+    if (hadronicCorrectionType == 3) {
+      constituentEnergy = constituent.energyCorrectedAllTracks1();
+    }
+    if (hadronicCorrectionType == 4) {
+      constituentEnergy = constituent.energyCorrectedAllTracks2();
+    }
+    float constituentPt = constituentEnergy / std::cosh(constituent.eta());
+    constituents.emplace_back(constituentPt * std::cos(constituent.phi()), constituentPt * std::sin(constituent.phi()), constituentPt * std::sinh(constituent.eta()), constituentEnergy);
+  }
+  setFastJetUserInfo(constituents, index, status);
+}
+
+}; // namespace fastjetutilities
+
+#endif // PWGJE_CORE_FASTJETUTILITIES_H_
+// Copyright 2019-2020 CERN and copyright holders of ALICE O2.
+// See https://alice-o2.web.cern.ch/copyright for details of the copyright holders.
+// All rights not expressly granted are reserved.
+//
+// This software is distributed under the terms of the GNU General Public
+// License v3 (GPL Version 3), copied verbatim in the file "COPYING".
+//
+// In applying this license CERN does not waive the privileges and immunities
+// granted to it by virtue of its status as an Intergovernmental Organization
+// or submit itself to any jurisdiction.
+
+/// \file JetTaggingUtilities.h
+/// \brief Jet tagging related utilities
+///
+/// \author Nima Zardoshti <nima.zardoshti@cern.ch>
+/// \author Hanseo Park <hanseo.park@cern.ch>
+
+#ifndef PWGJE_CORE_JETTAGGINGUTILITIES_H_
+#define PWGJE_CORE_JETTAGGINGUTILITIES_H_
+
+#include "PWGJE/Core/JetUtilities.h"
+
+#include "Common/Core/RecoDecay.h"
+
+#include <CommonConstants/PhysicsConstants.h>
+#include <Framework/Logger.h>
+
+#include <TF1.h>
+#include <TMath.h>
+
+#include <Rtypes.h>
+
+#include <algorithm>
+#include <array>
+#include <cmath>
+#include <cstddef>
+#include <cstdint>
+#include <functional>
+#include <limits>
+#include <memory>
+#include <string>
+#include <tuple>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
+enum JetTaggingSpecies {
+  none = 0,
+  charm = 1,
+  beauty = 2,
+  lightflavour = 3,
+  lightquark = 4,
+  gluon = 5,
+  udg = 6,
+  strange = 7,
+};
+
+enum BJetTaggingMethod {
+  IPsN1 = 0,
+  IPsN2 = 1,
+  IPsN3 = 2,
+  IPs3DN1 = 3,
+  IPs3DN2 = 4,
+  IPs3DN3 = 5,
+  SV = 6,
+  SV3D = 7
+};
+
+namespace jettaggingutilities
+{
+const int cmTomum = 10000; // using cm -> #mum for impact parameter (dca)
+
+struct BJetParams {
+  float jetpT = 0.0;
+  float jetEta = 0.0;
+  float jetPhi = 0.0;
+  int nTracks = -1;
+  int nSV = -1;
+  float jetMass = 0.0;
+};
+
+struct BJetTrackParams {
+  double trackpT = 0.0;
+  double trackEta = 0.0;
+  double dotProdTrackJet = 0.0;
+  double dotProdTrackJetOverJet = 0.0;
+  double deltaRJetTrack = 0.0;
+  double signedIP2D = 0.0;
+  double signedIP2DSign = 0.0;
+  double signedIPz = 0.0;
+  double signedIPzSign = 0.0;
+  double signedIP3D = 0.0;
+  double signedIP3DSign = 0.0;
+  double momFraction = 0.0;
+  double deltaRTrackVertex = 0.0;
+  double trackPhi = 0.0;
+  double trackCharge = 0.0;
+  double trackITSChi2NCl = 0.0;
+  double trackTPCChi2NCl = 0.0;
+  double trackITSNCls = 0.0;
+  double trackTPCNCls = 0.0;
+  double trackTPCNCrossedRows = 0.0;
+  int trackOrigin = -1;
+  int trackVtxIndex = -1;
+};
+
+struct BJetSVParams {
+  double svpT = 0.0;
+  double deltaRSVJet = 0.0;
+  double svMass = 0.0;
+  double svfE = 0.0;
+  double svIPxy = 0.0;
+  double svCPA = 0.0;
+  double svChi2PCA = 0.0;
+  double dispersion = 0.0;
+  double decayLength2D = 0.0;
+  double decayLength2DError = 0.0;
+  double decayLength3D = 0.0;
+  double decayLength3DError = 0.0;
+};
+
+//________________________________________________________________________
+bool isBHadron(int pc)
+{
+  using o2::constants::physics::Pdg;
+  std::vector<int> bPdG = {Pdg::kB0, Pdg::kBPlus, 10511, 10521, 513, 523, 10513, 10523, 20513, 20523, 20513, 20523, 515, 525, Pdg::kBS, 10531, 533, 10533,
+                           20533, 535, 541, 10541, 543, 10543, 20543, 545, 551, 10551, 100551, 110551, 200551, 210551, 553, 10553, 20553,
+                           30553, 100553, 110553, 120553, 130553, 200553, 210553, 220553, 300553, 9000533, 9010553, 555, 10555, 20555,
+                           100555, 110555, 120555, 200555, 557, 100557, Pdg::kLambdaB0, 5112, 5212, 5222, 5114, 5214, 5224, 5132, Pdg::kXiB0, 5312, 5322,
+                           5314, 5324, 5332, 5334, 5142, 5242, 5412, 5422, 5414, 5424, 5342, 5432, 5434, 5442, 5444, 5512, 5522, 5514, 5524,
+                           5532, 5534, 5542, 5544, 5554};
+
+  return (std::find(bPdG.begin(), bPdG.end(), std::abs(pc)) != bPdG.end());
+}
+//________________________________________________________________________
+bool isCHadron(int pc)
+{
+  using o2::constants::physics::Pdg;
+  std::vector<int> bPdG = {Pdg::kDPlus, Pdg::kD0, Pdg::kD0StarPlus, Pdg::kD0Star0, 413, 423, 10413, 10423, 20431, 20423, Pdg::kD2StarPlus, Pdg::kD2Star0, Pdg::kDS, 10431, Pdg::kDSStar, Pdg::kDS1, 20433, Pdg::kDS2Star, 441,
+                           10441, 100441, Pdg::kJPsi, 10443, Pdg::kChiC1, 100443, 30443, 9000443, 9010443, 9020443, 445, 100445, Pdg::kLambdaCPlus, Pdg::kSigmaCPlusPlus, 4212, Pdg::kSigmaC0,
+                           4224, 4214, 4114, Pdg::kXiCPlus, Pdg::kXiC0, 4322, 4312, 4324, 4314, Pdg::kOmegaC0, 4334, 4412, Pdg::kXiCCPlusPlus, 4414, 4424, 4432, 4434, 4444};
+
+  return (std::find(bPdG.begin(), bPdG.end(), std::abs(pc)) != bPdG.end());
+}
+
+/**
+ * returns the globalIndex of the earliest mother of a particle in the shower. returns -1 if a suitable mother is not found
+ *
+ * @param particle MCParticle whose mother is to be found
+ */
+template <typename T>
+int getOriginalMotherIndex(const typename T::iterator& particle)
+{
+
+  // if (!particle) {
+  //   return -1.0;
+  // }
+  auto mother = particle;
+
+  while (mother.has_mothers()) {
+
+    mother = mother.template mothers_first_as<T>();
+
+    int motherStatusCode = std::abs(mother.getGenStatusCode());
+
+    if (motherStatusCode == 23 || motherStatusCode == 33 || motherStatusCode == 43 || motherStatusCode == 63) {
+      return mother.globalIndex();
+    }
+  }
+  return -1.0;
+}
+
+/**
+ * returns the globalIndex of the earliest HF mother of a particle in the shower. returns -1 if a suitable mother is not found. Should be used only on already identified HF particles
+ *
+ * @param hfparticle MCParticle whose mother is to be found
+ */
+
+template <typename T>
+int getOriginalHFMotherIndex(const typename T::iterator& hfparticle)
+{
+
+  // if (!hfparticle) {
+  //   return -1.0;
+  // }
+  auto mother = hfparticle;
+
+  while (mother.has_mothers()) {
+
+    mother = mother.template mothers_first_as<T>();
+
+    int motherStatusCode = std::abs(mother.getGenStatusCode());
+
+    if (motherStatusCode == 23 || motherStatusCode == 33 || motherStatusCode == 43 || motherStatusCode == 63 || (motherStatusCode == 51 && mother.template mothers_first_as<T>().pdgCode() == 21)) {
+      return mother.globalIndex();
+    }
+  }
+  return -1.0;
+}
+
+/**
+ * checks if atrack in a reco level jet originates from a HF shower. 0:no HF shower, 1:charm shower, 2:beauty shower. The first track originating from an HF shower can be extracted by reference
+ *
+ * @param jet
+ * @param particles table of generator level particles to be searched through
+ * @param hftrack track passed as reference which is then replaced by the first track that originated from an HF shower
+ */
+template <typename T, typename U, typename V>
+int jetTrackFromHFShower(T const& jet, U const& /*tracks*/, V const& particles, typename U::iterator& hftrack, bool searchUpToQuark)
+{
+
+  bool hasMcParticle = false;
+  int origin = -1;
+  for (auto const& track : jet.template tracks_as<U>()) {
+    hftrack = track; // for init if origin is 1 or 2, the track is not hftrack
+    if (!track.has_mcParticle()) {
+      continue;
+    }
+    hasMcParticle = true;
+    auto const& particle = track.template mcParticle_as<V>();
+    origin = RecoDecay::getParticleOrigin(particles, particle, searchUpToQuark);
+    if (origin == RecoDecay::OriginType::Prompt || origin == RecoDecay::OriginType::NonPrompt) { // 1=charm , 2=beauty
+      hftrack = track;
+      if (origin == RecoDecay::OriginType::Prompt) {
+        return JetTaggingSpecies::charm;
+      }
+      if (origin == RecoDecay::OriginType::NonPrompt) {
+        return JetTaggingSpecies::beauty;
+      }
+    }
+  }
+
+  if (hasMcParticle) {
+    return JetTaggingSpecies::lightflavour;
+  } else {
+    return JetTaggingSpecies::none;
+  }
+}
+
+/**
+ * checks if a particle in a generator level jet originates from a HF shower. 0:no HF shower, 1:charm shower, 2:beauty shower. The first particle originating from an HF shower can be extracted by reference
+ *
+ * @param jet
+ * @param particles table of generator level particles to be searched through
+ * @param hfparticle particle passed as reference which is then replaced by the first track that originated from an HF shower
+ */
+template <typename T, typename U>
+int jetParticleFromHFShower(T const& jet, U const& particles, typename U::iterator& hfparticle, bool searchUpToQuark)
+{
+
+  int origin = -1;
+  for (const auto& particle : jet.template tracks_as<U>()) {
+    hfparticle = particle; // for init if origin is 1 or 2, the particle is not hfparticle
+    origin = RecoDecay::getParticleOrigin(particles, particle, searchUpToQuark);
+    if (origin == RecoDecay::OriginType::Prompt || origin == RecoDecay::OriginType::NonPrompt) { // 1=charm , 2=beauty
+      hfparticle = particle;
+      if (origin == RecoDecay::OriginType::Prompt) {
+        return JetTaggingSpecies::charm;
+      }
+      if (origin == RecoDecay::OriginType::NonPrompt) {
+        return JetTaggingSpecies::beauty;
+      }
+    }
+  }
+  return JetTaggingSpecies::lightflavour;
+}
+
+/**
+ * returns if a reco level jet originates from a HF shower. 0:no HF shower, 1:charm shower, 2:beauty shower. The requirement is that the jet contains a particle from an HF shower and that the original HF quark is within dRMax of the jet axis in eta-phi
+ *
+ * @param jet
+ * @param particles table of generator level particles to be searched through
+ * @param dRMax maximum distance in eta-phi of initiating heavy-flavour quark from the jet axis
+ */
+
+template <typename T, typename U, typename V>
+int mcdJetFromHFShower(T const& jet, U const& tracks, V const& particles, float dRMax = 0.25, bool searchUpToQuark = false)
+{
+
+  typename U::iterator hftrack;
+  int origin = jetTrackFromHFShower(jet, tracks, particles, hftrack, searchUpToQuark);
+  if (origin == JetTaggingSpecies::charm || origin == JetTaggingSpecies::beauty) {
+    if (!hftrack.has_mcParticle()) {
+      return JetTaggingSpecies::none;
+    }
+    auto const& hfparticle = hftrack.template mcParticle_as<V>();
+
+    int originalHFMotherIndex = getOriginalHFMotherIndex<V>(hfparticle);
+    if (originalHFMotherIndex > -1.0) {
+
+      if (jetutilities::deltaR(jet, particles.iteratorAt(originalHFMotherIndex)) < dRMax) {
+
+        return origin;
+
+      } else {
+        return JetTaggingSpecies::none;
+      }
+
+    } else {
+      return JetTaggingSpecies::none;
+    }
+
+  } else {
+
+    return JetTaggingSpecies::lightflavour;
+  }
+}
+
+/**
+ * checks if a generator level jet originates from a HF shower. 0:no HF shower, 1:charm shower, 2:beauty shower. The requirement is that the jet contains a particle from an HF shower and that the original HF quark is within dRMax of the jet axis in eta-phi
+ *
+ * @param jet
+ * @param particles table of generator level particles to be searched through
+ * @param dRMax maximum distance in eta-phi of initiating heavy-flavour quark from the jet axis
+ */
+
+template <typename T, typename U>
+int mcpJetFromHFShower(T const& jet, U const& particles, float dRMax = 0.25, bool searchUpToQuark = false)
+{
+
+  typename U::iterator hfparticle;
+  int origin = jetParticleFromHFShower(jet, particles, hfparticle, searchUpToQuark);
+  if (origin == JetTaggingSpecies::charm || origin == JetTaggingSpecies::beauty) {
+
+    int originalHFMotherIndex = getOriginalHFMotherIndex<U>(hfparticle);
+    if (originalHFMotherIndex > -1.0) {
+
+      if (jetutilities::deltaR(jet, particles.iteratorAt(originalHFMotherIndex)) < dRMax) {
+
+        return origin;
+
+      } else {
+        return JetTaggingSpecies::none;
+      }
+
+    } else {
+      return JetTaggingSpecies::none;
+    }
+
+  } else {
+
+    return JetTaggingSpecies::lightflavour;
+  }
+}
+
+/**
+ * returns the pdg code of the original scattered parton closest to the jet axis, with the restriction that the parton and jet axis must be within dRMax in eta-phi
+ *
+ * @param jet
+ * @param particles table of generator level particles to be searched through
+ * @param dRMax maximum distance in eta-phi of initiating heavy-flavour quark from the jet axis
+ */
+
+template <typename T, typename U>
+int jetOrigin(T const& jet, U const& particles, float dRMax = 0.25)
+{
+  bool firstPartonFound = false;
+  typename U::iterator parton1;
+  typename U::iterator parton2;
+  for (auto const& particle : particles) {
+    if (std::abs(particle.getGenStatusCode()) == 23) {
+      if (!firstPartonFound) {
+        parton1 = particle;
+        firstPartonFound = true;
+      } else {
+        parton2 = particle;
+      }
+    }
+  }
+
+  float dR1 = jetutilities::deltaR(jet, parton1);
+  float dR2 = jetutilities::deltaR(jet, parton2);
+
+  if (dR1 <= dR2 && dR1 < dRMax) {
+
+    return parton1.pdgCode();
+  }
+  if (dR2 <= dR1 && dR2 < dRMax) {
+
+    return parton2.pdgCode();
+  }
+
+  return 0;
+}
+
+/**
+ * return the jet flavor: 0 for lf-jet, 1 for c-jet, 2 for b-jet
+ *
+ * @param AnyJet the jet that we need to study its flavor
+ * @param AllMCParticles a vector of all the mc particles stack
+ */
+template <typename AnyJet, typename AllMCParticles>
+int16_t getJetFlavor(AnyJet const& jet, AllMCParticles const& mcparticles)
+{
+  bool charmQuark = false;
+  for (auto const& mcpart : mcparticles) {
+    int pdgcode = mcpart.pdgCode();
+    if (std::abs(pdgcode) == 21 || (std::abs(pdgcode) >= 1 && std::abs(pdgcode) <= 5)) {
+      double dR = jetutilities::deltaR(jet, mcpart);
+
+      if (dR < jet.r() / 100.f) {
+        if (std::abs(pdgcode) == 5) {
+          return JetTaggingSpecies::beauty; // Beauty jet
+        } else if (std::abs(pdgcode) == 4) {
+          charmQuark = true;
+        }
+      }
+    }
+  }
+
+  if (charmQuark) {
+    return JetTaggingSpecies::charm; // Charm jet
+  }
+
+  return JetTaggingSpecies::lightflavour; // Light flavor jet
+}
+
+/**
+ * return also the s-jet flavor: 1 for c-jet, 2 for b-jet, 7 for s-jet
+ *                               6 for u,d or g jets.
+ *
+ * @param AnyJet the jet that we need to study its flavor
+ * @param AllMCParticles a vector of all the mc particles stack
+ */
+template <typename AnyJet, typename AllMCParticles>
+int16_t getSJetFlavor(AnyJet const& jet, AllMCParticles const& mcparticles)
+{
+  bool charmQuark = false;
+  bool strangeQuark = false;
+
+  for (auto const& mcpart : mcparticles) {
+    int pdgcode = mcpart.pdgCode();
+    if (std::abs(pdgcode) == 21 || (std::abs(pdgcode) >= 1 && std::abs(pdgcode) <= 5)) {
+      double dR = jetutilities::deltaR(jet, mcpart);
+
+      if (dR < jet.r() / 100.f) {
+        if (std::abs(pdgcode) == 5) {
+          return JetTaggingSpecies::beauty; // Beauty jet
+        } else if (std::abs(pdgcode) == 4) {
+          charmQuark = true;
+        } else if (std::abs(pdgcode) == 3) {
+          strangeQuark = true;
+        }
+      }
+    }
+  }
+
+  if (charmQuark) {
+    return JetTaggingSpecies::charm; // Charm jet
+  } else if (strangeQuark) {
+    return JetTaggingSpecies::strange; // Strange jet
+  }
+
+  return JetTaggingSpecies::udg; // Up, Down or Gluon jet
+}
+
+/**
+ * return the jet flavor if it finds a HF hadron inside the jet: 0 for lf-jet, 1 for c-jet, 2 for b-jet
+ *
+ * @param AnyJet the jet that we need to study its flavor
+ * @param AllMCParticles a vector of all the mc particles stack
+ */
+template <typename AnyJet, typename AllMCParticles>
+int16_t getJetFlavorHadron(AnyJet const& jet, AllMCParticles const& mcparticles)
+{
+  bool charmHadron = false;
+
+  for (auto const& mcpart : mcparticles) {
+    int pdgcode = mcpart.pdgCode();
+    if (isBHadron(pdgcode) || isCHadron(pdgcode)) {
+      double dR = jetutilities::deltaR(jet, mcpart);
+
+      if (dR < jet.r() / 100.f) {
+        if (isBHadron(pdgcode)) {
+          return JetTaggingSpecies::beauty; // Beauty jet
+        } else if (isCHadron(pdgcode)) {
+          charmHadron = true;
+        }
+      }
+    }
+  }
+
+  if (charmHadron) {
+    return JetTaggingSpecies::charm; // Charm jet
+  }
+
+  return JetTaggingSpecies::lightflavour; // Light flavor jet
+}
+
+/**
+ * return acceptance of track about DCA xy and z due to cut for QualityTracks
+ */
+template <typename T>
+bool trackAcceptanceWithDca(T const& track, float trackDcaXYMax, float trackDcaZMax)
+{
+  if (std::abs(track.dcaXY()) > trackDcaXYMax)
+    return false;
+  if (std::abs(track.dcaZ()) > trackDcaZMax)
+    return false;
+  return true;
+}
+
+/**
+ * retrun acceptance of prong due to cut for high quality secondary vertex
+ */
+template <typename T>
+bool prongAcceptance(T const& prong, float prongChi2PCAMin, float prongChi2PCAMax, float prongsigmaLxyMax, float prongIPxyMin, float prongIPxyMax, bool doXYZ)
+{
+  if (prong.chi2PCA() < prongChi2PCAMin)
+    return false;
+  if (prong.chi2PCA() > prongChi2PCAMax)
+    return false;
+  if (std::abs(prong.impactParameterXY()) < prongIPxyMin)
+    return false;
+  if (std::abs(prong.impactParameterXY()) > prongIPxyMax)
+    return false;
+
+  if (!doXYZ) {
+    if (prong.errorDecayLengthXY() > prongsigmaLxyMax)
+      return false;
+  } else {
+    if (prong.errorDecayLength() > prongsigmaLxyMax)
+      return false;
+  }
+  return true;
+}
+
+/**
+ * retrun acceptance of secondary vertex due to cut for high quality secondary vertex
+ */
+template <typename T>
+bool svAcceptance(T const& sv, float svDispersionMax)
+{
+  if (sv.dispersion() > svDispersionMax)
+    return false;
+  return true;
+}
+
+/**
+ * return geometric sign which is calculated scalar product between jet axis with DCA (track propagated to PV )
+ * positive and negative value are expected from primary vertex
+ * positive value is expected from secondary vertex
+ *
+ * @param jet
+ * @param track which is needed aod::JTrackExtras
+ */
+template <typename T, typename U>
+int getGeoSign(T const& jet, U const& track)
+{
+  auto sign = TMath::Sign(1, track.dcaX() * jet.px() + track.dcaY() * jet.py() + track.dcaZ() * jet.pz());
+  if (sign < -1 || sign > 1)
+    LOGF(info, Form("Sign is %d", sign));
+  return sign;
+}
+
+/**
+ * Orders the tracks associated with a jet based on signed impact parameter significance and stores them
+ * in a vector in descending order.
+ */
+template <typename T, typename U, typename Vec = std::vector<float>>
+void orderForIPJetTracks(T const& jet, U const& /*tracks*/, float trackDcaXYMax, float trackDcaZMax, Vec& vecSignImpSig, bool useIPxyz)
+{
+  for (auto const& track : jet.template tracks_as<U>()) {
+    if (!trackAcceptanceWithDca(track, trackDcaXYMax, trackDcaZMax))
+      continue;
+    auto geoSign = getGeoSign(jet, track);
+    float varSignImpSig;
+    if (!useIPxyz) {
+      varSignImpSig = geoSign * std::abs(track.dcaXY()) / track.sigmadcaXY();
+    } else {
+      varSignImpSig = geoSign * std::abs(track.dcaXYZ()) / track.sigmadcaXYZ();
+    }
+    vecSignImpSig.push_back(varSignImpSig);
+  }
+  std::sort(vecSignImpSig.begin(), vecSignImpSig.end(), std::greater<float>());
+}
+
+/**
+ * Checks if a jet is greater than the given tagging working point based on the signed impact parameter significances
+ * return (true, true, true) if the jet is tagged by the 1st, 2nd and 3rd largest IPs
+ */
+template <typename T, typename U>
+std::tuple<bool, bool, bool> isGreaterThanTaggingPoint(T const& jet, U const& tracks, float trackDcaXYMax, float trackDcaZMax, float taggingPoint = 1.0, bool useIPxyz = false)
+{
+  bool taggedIPsN1 = false;
+  bool taggedIPsN2 = false;
+  bool taggedIPsN3 = false;
+  std::vector<float> vecSignImpSig;
+  orderForIPJetTracks(jet, tracks, trackDcaXYMax, trackDcaZMax, vecSignImpSig, useIPxyz);
+  if (vecSignImpSig.size() > 0) {
+    if (vecSignImpSig[0] > taggingPoint) { // tagger point set
+      taggedIPsN1 = true;
+    }
+  }
+  if (vecSignImpSig.size() > 1) {
+    if (vecSignImpSig[1] > taggingPoint) { // tagger point set
+      taggedIPsN2 = true;
+    }
+  }
+  if (vecSignImpSig.size() > 2) {
+    if (vecSignImpSig[2] > taggingPoint) { // tagger point set
+      taggedIPsN3 = true;
+    }
+  }
+  return std::make_tuple(taggedIPsN1, taggedIPsN2, taggedIPsN3);
+}
+
+/**
+ * Creates and sets the parameters of a resolution function (TF1) for constituents of jet based on signed impact parameter significnace in plane XY
+ * This function is typically used to set up a resolution function for jet tagging purposes.
+ *
+ * @param vecParams A vector containing the parameters for the resolution function.
+ * @return A unique pointer to the TF1 resolution function with the parameters set.
+ */
+template <typename T>
+std::unique_ptr<TF1> setResolutionFunction(T const& vecParams)
+{
+  std::unique_ptr<TF1> fResoFunc(new TF1("fResoFunc", "gaus(0)+expo(3)+expo(5)+expo(7)", -40, 0));
+  for (typename T::size_type i = 0; i < vecParams.size(); i++) {
+    fResoFunc->SetParameter(i, vecParams[i]);
+  }
+
+  return fResoFunc;
+}
+
+/**
+ * Calculates the probability of a given track being associated with a jet, based on the geometric
+ * sign and the resolution function of the jet's impact parameter significance. This probability
+ * helps in distinguishing between tracks likely originating from the primary vertex and those from
+ * secondary vertices, aiding in jet flavor tagging.
+ *
+ * @param fResoFuncjet The resolution function for the jet, used to model the distribution of impact
+ *                     parameter significances for tracks associated with the jet.
+ * @param track The track for which the probability is being calculated.
+ * @param minSignImpXYSig The minimum significance of the impact parameter in the XY plane, used as
+ *                        the lower limit for integration of the resolution function. Defaults to -40.
+ * @return The calculated probability of the track being associated with the jet, based on its
+ *         impact parameter significance.
+ */
+template <typename T, typename U>
+float getTrackProbability(T const& fResoFuncjet, U const& track, float minSignImpXYSig = -40)
+{
+  float probTrack = 0;
+  auto varSignImpXYSig = std::abs(track.dcaXY()) / track.sigmadcaXY();
+  if (-varSignImpXYSig < minSignImpXYSig)
+    varSignImpXYSig = -minSignImpXYSig - 0.01; // To avoid overflow for integral
+  probTrack = fResoFuncjet->Integral(minSignImpXYSig, -varSignImpXYSig) / fResoFuncjet->Integral(minSignImpXYSig, 0);
+
+  return probTrack;
+}
+
+/**
+ * Computes the jet probability (JP) for a given jet, considering only tracks with a positive geometric
+ * sign. JP is calculated using the product of individual track probabilities and the sum of logarithmic
+ * terms derived from these probabilities, providing a measure for the likelihood of the jet being
+ * associated with a particular flavor based on its constituent tracks' impact parameters.
+ *
+ * @param fResoFuncjet: The resolution function for the jet, applied to each track within the jet to
+ *                     assess its probability based on the impact parameter significance.
+ * @param collision: The collision event data, necessary for geometric sign calculations.
+ * @param jet: The jet for which the probability is being calculated.
+ * @param tracks: Tracks in jets
+ * @param cnt: ordering number of impact parameter cnt=0: untagged, cnt=1: first, cnt=2: seconde, cnt=3: third.
+ * @param tagPoint: tagging working point which is selected by condiered efficiency and puriy
+ * @param minSignImpXYSig: To avoid over fitting
+ * @return The jet probability (JP), indicating the likelihood of the jet's association with a
+ *         specific flavor. Returns -1 if the jet contains fewer than two tracks with a positive
+ *         geometric sign.
+ */
+template <typename T, typename U, typename V>
+float getJetProbability(T const& fResoFuncjet, U const& jet, V const& /*tracks*/, float trackDcaXYMax, float trackDcaZMax, float minSignImpXYSig = -10)
+{
+  std::vector<float> jetTracksPt;
+  float trackjetProb = 1.;
+
+  for (auto const& track : jet.template tracks_as<V>()) {
+    if (!trackAcceptanceWithDca(track, trackDcaXYMax, trackDcaZMax))
+      continue;
+
+    float probTrack = getTrackProbability(fResoFuncjet, track, minSignImpXYSig);
+
+    auto geoSign = getGeoSign(jet, track);
+    if (geoSign > 0) { // only take positive sign track for JP calculation
+      trackjetProb *= probTrack;
+      jetTracksPt.push_back(track.pt());
+    }
+  }
+
+  float jetProb = -1.;
+  if (jetTracksPt.size() < 2)
+    return -1;
+
+  float sumjetProb = 0.;
+  for (std::vector<float>::size_type i = 0; i < jetTracksPt.size(); i++) {
+    sumjetProb += (std::pow(-1 * std::log(trackjetProb), static_cast<int>(i)) / TMath::Factorial(i));
+  }
+
+  jetProb = trackjetProb * sumjetProb;
+  return jetProb;
+}
+
+// overloading for the case of using resolution function for each pt range
+template <typename T, typename U, typename V>
+float getJetProbability(std::vector<std::unique_ptr<T>> const& fResoFuncjets, U const& jet, V const& /*tracks*/, float trackDcaXYMax, float trackDcaZMax, float minSignImpXYSig = -10)
+{
+  std::vector<float> jetTracksPt;
+  float trackjetProb = 1.;
+
+  for (auto const& track : jet.template tracks_as<V>()) {
+    if (!trackAcceptanceWithDca(track, trackDcaXYMax, trackDcaZMax))
+      continue;
+
+    float probTrack = -1;
+    // choose the proper resolution function for the track based on its pt.
+    if (track.pt() >= 0.0 && track.pt() < 0.5) {
+      probTrack = getTrackProbability(fResoFuncjets.at(0), track, minSignImpXYSig);
+    } else if (track.pt() >= 0.5 && track.pt() < 1.0) {
+      probTrack = getTrackProbability(fResoFuncjets.at(1), track, minSignImpXYSig);
+    } else if (track.pt() >= 1.0 && track.pt() < 2.0) {
+      probTrack = getTrackProbability(fResoFuncjets.at(2), track, minSignImpXYSig);
+    } else if (track.pt() >= 2.0 && track.pt() < 4.0) {
+      probTrack = getTrackProbability(fResoFuncjets.at(3), track, minSignImpXYSig);
+    } else if (track.pt() >= 4.0 && track.pt() < 6.0) {
+      probTrack = getTrackProbability(fResoFuncjets.at(4), track, minSignImpXYSig);
+    } else if (track.pt() >= 6.0 && track.pt() < 9.0) {
+      probTrack = getTrackProbability(fResoFuncjets.at(5), track, minSignImpXYSig);
+    } else if (track.pt() >= 9.0) {
+      probTrack = getTrackProbability(fResoFuncjets.at(6), track, minSignImpXYSig);
+    }
+
+    auto geoSign = getGeoSign(jet, track);
+    if (geoSign > 0) { // only take positive sign track for JP calculation
+      trackjetProb *= probTrack;
+      jetTracksPt.push_back(track.pt());
+    }
+  }
+
+  float jetProb = -1.;
+  if (jetTracksPt.size() < 2)
+    return -1;
+
+  float sumjetProb = 0.;
+  for (std::vector<float>::size_type i = 0; i < jetTracksPt.size(); i++) {
+    sumjetProb += (std::pow(-1 * std::log(trackjetProb), static_cast<int>(i)) / TMath::Factorial(i));
+  }
+
+  jetProb = trackjetProb * sumjetProb;
+  return jetProb;
+}
+
+// For secaondy vertex method utilites
+template <typename ProngType, typename JetType>
+typename ProngType::iterator jetFromProngMaxDecayLength(const JetType& jet, float const& prongChi2PCAMin, float prongChi2PCAMax, float prongsigmaLxyMax, float prongIPxyMin, float prongIPxyMax, bool doXYZ = false, bool* checkSv = nullptr)
+{
+  if (checkSv)
+    *checkSv = false;
+  float maxSxy = -1.0f;
+  typename ProngType::iterator bjetCand;
+  for (const auto& prong : jet.template secondaryVertices_as<ProngType>()) {
+    if (!prongAcceptance(prong, prongChi2PCAMin, prongChi2PCAMax, prongsigmaLxyMax, prongIPxyMin, prongIPxyMax, doXYZ))
+      continue;
+    *checkSv = true;
+    float sxy = -1.0f;
+    if (!doXYZ) {
+      sxy = prong.decayLengthXY() / prong.errorDecayLengthXY();
+    } else {
+      sxy = prong.decayLength() / prong.errorDecayLength();
+    }
+    if (maxSxy < sxy) {
+      maxSxy = sxy;
+      bjetCand = prong;
+    }
+  }
+  return bjetCand;
+}
+
+template <typename T, typename U>
+bool isTaggedJetSV(T const jet, U const& /*prongs*/, float prongChi2PCAMin, float prongChi2PCAMax, float prongsigmaLxyMax, float prongIPxyMin, float prongIPxyMax, float svDispersionMax, float doXYZ = false, float tagPointForSV = 15.)
+{
+  bool checkSv = false;
+  auto bjetCand = jetFromProngMaxDecayLength<U>(jet, prongChi2PCAMin, prongChi2PCAMax, prongsigmaLxyMax, prongIPxyMin, prongIPxyMax, doXYZ, &checkSv);
+  if (!(checkSv && svAcceptance(bjetCand, svDispersionMax)))
+    return false;
+  if (!doXYZ) {
+    auto maxSxy = bjetCand.decayLengthXY() / bjetCand.errorDecayLengthXY();
+    if (maxSxy < tagPointForSV)
+      return false;
+  } else {
+    auto maxSxyz = bjetCand.decayLength() / bjetCand.errorDecayLength();
+    if (maxSxyz < tagPointForSV)
+      return false;
+  }
+  return true;
+}
+
+template <typename T, typename U, typename V = float>
+uint16_t setTaggingIPBit(T const& jet, U const& tracks, V trackDcaXYMax, V trackDcaZMax, V tagPointForIP)
+{
+  uint16_t bit = 0;
+  auto [taggedIPsN1, taggedIPsN2, taggedIPsN3] = isGreaterThanTaggingPoint(jet, tracks, trackDcaXYMax, trackDcaZMax, tagPointForIP, false);
+  if (taggedIPsN1) {
+    SETBIT(bit, BJetTaggingMethod::IPsN1);
+  }
+  if (taggedIPsN2) {
+    SETBIT(bit, BJetTaggingMethod::IPsN2);
+  }
+  if (taggedIPsN3) {
+    SETBIT(bit, BJetTaggingMethod::IPsN3);
+  }
+
+  auto [taggedIPs3DN1, taggedIPs3DN2, taggedIPs3DN3] = isGreaterThanTaggingPoint(jet, tracks, trackDcaXYMax, trackDcaZMax, tagPointForIP, true);
+  if (taggedIPs3DN1) {
+    SETBIT(bit, BJetTaggingMethod::IPs3DN1);
+  }
+  if (taggedIPs3DN2) {
+    SETBIT(bit, BJetTaggingMethod::IPs3DN2);
+  }
+  if (taggedIPs3DN3) {
+    SETBIT(bit, BJetTaggingMethod::IPs3DN3);
+  }
+  return bit;
+}
+
+template <typename T, typename U, typename V = float>
+uint16_t setTaggingSVBit(T const& jet, U const& prongs, V prongChi2PCAMin, V prongChi2PCAMax, V prongsigmaLxyMax, float prongIPxyMin, float prongIPxyMax, V svDispersionMax, V tagPointForSV)
+{
+  uint16_t bit = 0;
+  if (isTaggedJetSV(jet, prongs, prongChi2PCAMin, prongChi2PCAMax, prongsigmaLxyMax, prongIPxyMin, prongIPxyMax, svDispersionMax, false, tagPointForSV)) {
+    SETBIT(bit, BJetTaggingMethod::SV);
+  }
+  if (isTaggedJetSV(jet, prongs, prongChi2PCAMin, prongChi2PCAMax, prongsigmaLxyMax, prongIPxyMin, prongIPxyMax, svDispersionMax, true, tagPointForSV)) {
+    SETBIT(bit, BJetTaggingMethod::SV3D);
+  }
+  return bit;
+}
+
+/**
+ * Clusters jet constituent tracks into groups of tracks originating from same mcParticle position (trkVtxIndex), and finds each track origin (trkOrigin). (for GNN b-jet tagging)
+ * @param trkLabels Track labels for GNN vertex and track origin predictions. trkVtxIndex: The index value of each vertex (cluster) which is determined by the function. trkOrigin: The category of the track origin (0: not physical primary, 1: charm, 2: beauty, 3: primary vertex, 4: other secondary vertex).
+ * @param vtxResParam Vertex resolution parameter which determines the cluster size. (cm)
+ * @param trackPtMin Minimum value of track pT.
+ * @return The number of vertices (clusters) in the jet.
+ */
+template <typename AnyCollision, typename AnalysisJet, typename AnyTracks, typename AnyParticles, typename AnyOriginalParticles>
+int vertexClustering(AnyCollision const& collision, AnalysisJet const& jet, AnyTracks const&, AnyParticles const& particles, AnyOriginalParticles const&, std::unordered_map<std::string, std::vector<int>>& trkLabels, bool searchUpToQuark, float vtxResParam = 0.01 /* 0.01cm = 100um */, float trackPtMin = 0.5)
+{
+  const auto& tracks = jet.template tracks_as<AnyTracks>();
+  const int nTrks = tracks.size();
+
+  // trkVtxIndex
+
+  std::vector<int> tempTrkVtxIndex;
+
+  int i = 0;
+  for (const auto& constituent : tracks) {
+    if (!constituent.has_mcParticle() || !constituent.template mcParticle_as<AnyParticles>().isPhysicalPrimary() || constituent.pt() < trackPtMin)
+      tempTrkVtxIndex.push_back(-1);
+    else
+      tempTrkVtxIndex.push_back(i++);
+  }
+  tempTrkVtxIndex.push_back(i); // temporary index for PV
+  if (nTrks < 1) {              // the process should be done for nTrks == 1 as well
+    trkLabels["trkVtxIndex"] = tempTrkVtxIndex;
+    return nTrks;
+  }
+
+  int nPos = nTrks + 1;
+  std::vector<float> dists(nPos * (nPos - 1) / 2);
+  auto trkPairIdx = [nPos](int ti, int tj) {
+    if (ti == tj || ti >= nPos || tj >= nPos || ti < 0 || tj < 0) {
+      LOGF(info, "Track pair index out of range");
+      return -1;
+    } else {
+      return (ti < tj) ? (ti * nPos - (ti * (ti + 1)) / 2 + tj - ti - 1) : (tj * nPos - (tj * (tj + 1)) / 2 + ti - tj - 1);
+    }
+  }; // index nTrks is for PV
+
+  for (int ti = 0; ti < nPos - 1; ti++)
+    for (int tj = ti + 1; tj < nPos; tj++) {
+      std::array<float, 3> posi, posj;
+
+      if (tj < nTrks) {
+        if (tracks[tj].has_mcParticle()) {
+          const auto& pj = tracks[tj].template mcParticle_as<AnyParticles>().template mcParticle_as<AnyOriginalParticles>();
+          posj = std::array<float, 3>{pj.vx(), pj.vy(), pj.vz()};
+        } else {
+          dists[trkPairIdx(ti, tj)] = std::numeric_limits<float>::max();
+          continue;
+        }
+      } else {
+        posj = std::array<float, 3>{collision.posX(), collision.posY(), collision.posZ()};
+      }
+
+      if (tracks[ti].has_mcParticle()) {
+        const auto& pi = tracks[ti].template mcParticle_as<AnyParticles>().template mcParticle_as<AnyOriginalParticles>();
+        posi = std::array<float, 3>{pi.vx(), pi.vy(), pi.vz()};
+      } else {
+        dists[trkPairIdx(ti, tj)] = std::numeric_limits<float>::max();
+        continue;
+      }
+
+      dists[trkPairIdx(ti, tj)] = RecoDecay::distance(posi, posj);
+    }
+
+  int clusteri = -1, clusterj = -1;
+  float minMinDist = -1.f; // If there is an not-merge-able minDist pair, check the 2nd-minDist pair.
+  while (true) {
+
+    float minDist = -1.f; // Get minDist pair
+    for (int ti = 0; ti < nPos - 1; ti++)
+      for (int tj = ti + 1; tj < nPos; tj++)
+        if (tempTrkVtxIndex[ti] != tempTrkVtxIndex[tj] && tempTrkVtxIndex[ti] >= 0 && tempTrkVtxIndex[tj] >= 0) {
+          float dist = dists[trkPairIdx(ti, tj)];
+          if ((dist < minDist || minDist < 0.f) && dist > minMinDist) {
+            minDist = dist;
+            clusteri = ti;
+            clusterj = tj;
+          }
+        }
+    if (clusteri < 0 || clusterj < 0)
+      break;
+
+    bool mrg = true; // Merge-ability check
+    for (int ti = 0; ti < nPos && mrg; ti++)
+      if (tempTrkVtxIndex[ti] == tempTrkVtxIndex[clusteri] && tempTrkVtxIndex[ti] >= 0) {
+        for (int tj = 0; tj < nPos && mrg; tj++)
+          if (tj != ti && tempTrkVtxIndex[tj] == tempTrkVtxIndex[clusterj] && tempTrkVtxIndex[tj] >= 0) {
+            if (dists[trkPairIdx(ti, tj)] > vtxResParam) { // If there is more distant pair compared to vtx_res between two clusters, they cannot be merged.
+              mrg = false;
+              minMinDist = minDist;
+            }
+          }
+      }
+    if (minDist > vtxResParam || minDist < 0.f)
+      break;
+
+    if (mrg) { // Merge two clusters
+      int oldIndex = tempTrkVtxIndex[clusterj];
+      for (int t = 0; t < nPos; t++)
+        if (tempTrkVtxIndex[t] == oldIndex)
+          tempTrkVtxIndex[t] = tempTrkVtxIndex[clusteri];
+    }
+  }
+
+  int nVertices = 0;
+
+  // Sort the indices from PV (as 0) to the most distant SV (as 1~).
+  int idxPV = tempTrkVtxIndex[nTrks];
+  for (int t = 0; t < nTrks; t++)
+    if (tempTrkVtxIndex[t] == idxPV) {
+      tempTrkVtxIndex[t] = -2;
+      nVertices = 1; // There is a track originating from PV
+    }
+
+  std::unordered_map<int, float> avgDistances;
+  std::unordered_map<int, int> count;
+  for (int t = 0; t < nTrks; t++) {
+    if (tempTrkVtxIndex[t] >= 0) {
+      avgDistances[tempTrkVtxIndex[t]] += dists[trkPairIdx(t, nTrks)];
+      count[tempTrkVtxIndex[t]]++;
+    }
+  }
+
+  trkLabels["trkVtxIndex"] = std::vector<int>(nTrks, -1);
+  if (count.size() != 0) {                        // If there is any SV cluster not only PV cluster
+    for (auto& [idx, avgDistance] : avgDistances) // o2-linter: disable=const-ref-in-for-loop
+      avgDistance /= count[idx];
+
+    nVertices += avgDistances.size();
+
+    std::vector<std::pair<int, float>> sortedIndices(avgDistances.begin(), avgDistances.end());
+    std::sort(sortedIndices.begin(), sortedIndices.end(), [](const auto& a, const auto& b) { return a.second < b.second; });
+    int rank = 1;
+    for (auto const& [idx, avgDistance] : sortedIndices) {
+      bool found = false;
+      for (int t = 0; t < nTrks; t++)
+        if (tempTrkVtxIndex[t] == idx) {
+          trkLabels["trkVtxIndex"][t] = rank;
+          found = true;
+        }
+      rank += found;
+    }
+  }
+
+  for (int t = 0; t < nTrks; t++)
+    if (tempTrkVtxIndex[t] == -2)
+      trkLabels["trkVtxIndex"][t] = 0;
+
+  // trkOrigin
+
+  int trkIdx = 0;
+  for (auto const& constituent : jet.template tracks_as<AnyTracks>()) {
+    if (!constituent.has_mcParticle() || !constituent.template mcParticle_as<AnyParticles>().isPhysicalPrimary() || constituent.pt() < trackPtMin) {
+      trkLabels["trkOrigin"].push_back(0);
+    } else {
+      const auto& particle = constituent.template mcParticle_as<AnyParticles>();
+      int orig = RecoDecay::getParticleOrigin(particles, particle, searchUpToQuark);
+      trkLabels["trkOrigin"].push_back((orig > 0) ? orig : (trkLabels["trkVtxIndex"][trkIdx] == 0) ? 3
+                                                                                                   : 4);
+    }
+
+    trkIdx++;
+  }
+
+  return nVertices;
+}
+
+// Looping over the SV info and putting them in the input vector
+template <typename AnalysisJet, typename AnyTracks, typename SecondaryVertices>
+void analyzeJetSVInfo4ML(AnalysisJet const& myJet, AnyTracks const& /*allTracks*/, SecondaryVertices const& /*allSVs*/, std::vector<BJetSVParams>& svsParams, float svPtMin = 1.0, int svReductionFactor = 3)
+{
+  using SVType = typename SecondaryVertices::iterator;
+
+  // Min-heap to store the top 30 SVs by decayLengthXY/errorDecayLengthXY
+  auto compare = [](SVType& sv1, SVType& sv2) {
+    return (sv1.decayLengthXY() / sv1.errorDecayLengthXY()) > (sv2.decayLengthXY() / sv2.errorDecayLengthXY());
+  };
+
+  auto svs = myJet.template secondaryVertices_as<SecondaryVertices>();
+
+  // Sort the SVs based on their decay length significance in descending order
+  // This is needed in order to select longest SVs since some jets could have thousands of SVs
+  std::sort(svs.begin(), svs.end(), compare);
+
+  for (const auto& candSV : svs) {
+
+    if (candSV.pt() < svPtMin) {
+      continue;
+    }
+
+    double deltaRJetSV = jetutilities::deltaR(myJet, candSV);
+    double massSV = candSV.m();
+    double energySV = candSV.e();
+
+    if (svsParams.size() < (svReductionFactor * myJet.template tracks_as<AnyTracks>().size())) {
+      svsParams.emplace_back(BJetSVParams{candSV.pt(), deltaRJetSV, massSV, energySV / myJet.energy(), candSV.impactParameterXY(), candSV.cpa(), candSV.chi2PCA(), candSV.dispersion(), candSV.decayLengthXY(), candSV.errorDecayLengthXY(), candSV.decayLength(), candSV.errorDecayLength()});
+    }
+  }
+}
+
+// Looping over the track info and putting them in the input vector
+template <typename AnalysisJet, typename AnyTracks, typename SecondaryVertices>
+void analyzeJetTrackInfo4ML(AnalysisJet const& analysisJet, AnyTracks const& /*allTracks*/, SecondaryVertices const& /*allSVs*/, std::vector<BJetTrackParams>& tracksParams, float trackPtMin = 0.5, float trackDcaXYMax = 10.0, float trackDcaZMax = 10.0)
+{
+  for (const auto& constituent : analysisJet.template tracks_as<AnyTracks>()) {
+
+    if (constituent.pt() < trackPtMin || !trackAcceptanceWithDca(constituent, trackDcaXYMax, trackDcaZMax)) {
+      continue;
+    }
+
+    double deltaRJetTrack = jetutilities::deltaR(analysisJet, constituent);
+    double dotProduct = RecoDecay::dotProd(std::array<float, 3>{analysisJet.px(), analysisJet.py(), analysisJet.pz()}, std::array<float, 3>{constituent.px(), constituent.py(), constituent.pz()});
+    int sign = getGeoSign(analysisJet, constituent);
+
+    float rClosestSV = 10.;
+    for (const auto& candSV : analysisJet.template secondaryVertices_as<SecondaryVertices>()) {
+      double deltaRTrackSV = jetutilities::deltaR(constituent, candSV);
+      if (deltaRTrackSV < rClosestSV) {
+        rClosestSV = deltaRTrackSV;
+      }
+    }
+
+    tracksParams.emplace_back(BJetTrackParams{constituent.pt(), constituent.eta(), dotProduct, dotProduct / analysisJet.p(), deltaRJetTrack, std::abs(constituent.dcaXY()) * sign, constituent.sigmadcaXY(), std::abs(constituent.dcaZ()) * sign, constituent.sigmadcaZ(), std::abs(constituent.dcaXYZ()) * sign, constituent.sigmadcaXYZ(), constituent.p() / analysisJet.p(), rClosestSV});
+  }
+
+  auto compare = [](BJetTrackParams& tr1, BJetTrackParams& tr2) {
+    return (tr1.signedIP2D / tr1.signedIP2DSign) > (tr2.signedIP2D / tr2.signedIP2DSign);
+  };
+
+  // Sort the tracks based on their IP significance in descending order
+  std::sort(tracksParams.begin(), tracksParams.end(), compare);
+}
+
+// Looping over the track info and putting them in the input vector without using any SV info
+template <typename AnalysisJet, typename AnyTracks>
+void analyzeJetTrackInfo4MLnoSV(AnalysisJet const& analysisJet, AnyTracks const& /*allTracks*/, std::vector<BJetTrackParams>& tracksParams, float trackPtMin = 0.5, float trackDcaXYMax = 10.0, float trackDcaZMax = 10.0)
+{
+  for (const auto& constituent : analysisJet.template tracks_as<AnyTracks>()) {
+
+    if (constituent.pt() < trackPtMin || !trackAcceptanceWithDca(constituent, trackDcaXYMax, trackDcaZMax)) {
+      continue;
+    }
+
+    double deltaRJetTrack = jetutilities::deltaR(analysisJet, constituent);
+    double dotProduct = RecoDecay::dotProd(std::array<float, 3>{analysisJet.px(), analysisJet.py(), analysisJet.pz()}, std::array<float, 3>{constituent.px(), constituent.py(), constituent.pz()});
+    int sign = getGeoSign(analysisJet, constituent);
+
+    tracksParams.emplace_back(BJetTrackParams{constituent.pt(), constituent.eta(), dotProduct, dotProduct / analysisJet.p(), deltaRJetTrack, std::abs(constituent.dcaXY()) * sign, constituent.sigmadcaXY(), std::abs(constituent.dcaZ()) * sign, constituent.sigmadcaZ(), std::abs(constituent.dcaXYZ()) * sign, constituent.sigmadcaXYZ(), constituent.p() / analysisJet.p(), 0.0});
+  }
+
+  auto compare = [](BJetTrackParams& tr1, BJetTrackParams& tr2) {
+    return (tr1.signedIP2D / tr1.signedIP2DSign) > (tr2.signedIP2D / tr2.signedIP2DSign);
+  };
+
+  // Sort the tracks based on their IP significance in descending order
+  std::sort(tracksParams.begin(), tracksParams.end(), compare);
+}
+
+// Looping over the track info and putting them in the input vector (for GNN b-jet tagging)
+template <typename AnalysisJet, typename AnyTracks, typename AnyOriginalTracks>
+void analyzeJetTrackInfo4GNN(AnalysisJet const& analysisJet, AnyTracks const& /*allTracks*/, AnyOriginalTracks const& /*origTracks*/, std::vector<std::vector<float>>& tracksParams, float trackPtMin = 0.5, int64_t nMaxConstit = 40)
+{
+  for (const auto& constituent : analysisJet.template tracks_as<AnyTracks>()) {
+
+    if (constituent.pt() < trackPtMin) {
+      continue;
+    }
+
+    int sign = getGeoSign(analysisJet, constituent);
+
+    auto origConstit = constituent.template track_as<AnyOriginalTracks>();
+
+    if (static_cast<int64_t>(tracksParams.size()) < nMaxConstit) {
+      tracksParams.emplace_back(std::vector<float>{constituent.pt(), origConstit.phi(), constituent.eta(), static_cast<float>(constituent.sign()), std::abs(constituent.dcaXY()) * sign, constituent.sigmadcaXY(), std::abs(constituent.dcaZ()) * sign, constituent.sigmadcaZ(), static_cast<float>(origConstit.itsNCls()), static_cast<float>(origConstit.tpcNClsFound()), static_cast<float>(origConstit.tpcNClsCrossedRows()), origConstit.itsChi2NCl(), origConstit.tpcChi2NCl()});
+    } else {
+      // If there are more than nMaxConstit constituents in the jet, select only nMaxConstit constituents with the highest DCA_XY significance.
+      size_t minIdx = 0;
+      for (size_t i = 0; i < tracksParams.size(); ++i) {
+        if (tracksParams[i][4] / tracksParams[i][5] < tracksParams[minIdx][4] / tracksParams[minIdx][5])
+          minIdx = i;
+      }
+      if (std::abs(constituent.dcaXY()) * sign / constituent.sigmadcaXY() > tracksParams[minIdx][4] / tracksParams[minIdx][5])
+        tracksParams[minIdx] = std::vector<float>{constituent.pt(), origConstit.phi(), constituent.eta(), static_cast<float>(constituent.sign()), std::abs(constituent.dcaXY()) * sign, constituent.sigmadcaXY(), std::abs(constituent.dcaZ()) * sign, constituent.sigmadcaZ(), static_cast<float>(origConstit.itsNCls()), static_cast<float>(origConstit.tpcNClsFound()), static_cast<float>(origConstit.tpcNClsCrossedRows()), origConstit.itsChi2NCl(), origConstit.tpcChi2NCl()};
+    }
+  }
+}
+
+// Discriminant value for GNN b-jet tagging
+template <typename T>
+T getDb(const std::vector<T>& logits, double fC = 0.018)
+{
+  auto softmax = [](const std::vector<T>& logits) {
+    std::vector<T> res;
+    T maxLogit = *std::max_element(logits.begin(), logits.end());
+    T sumLogit = 0.;
+    for (size_t i = 0; i < logits.size(); ++i) {
+      res.push_back(std::exp(logits[i] - maxLogit));
+      sumLogit += res[i];
+    }
+    for (size_t i = 0; i < logits.size(); ++i) {
+      res[i] /= sumLogit;
+    }
+    return res;
+  };
+
+  std::vector<T> softmaxLogits = softmax(logits);
+
+  if (softmaxLogits[1] == 0. && softmaxLogits[2] == 0.) {
+    LOG(debug) << "jettaggingutilities::Db, Divide by zero: softmaxLogits = (" << softmaxLogits[0] << ", " << softmaxLogits[1] << ", " << softmaxLogits[2] << ")";
+  }
+
+  return std::log(softmaxLogits[0] / (fC * softmaxLogits[1] + (1. - fC) * softmaxLogits[2]));
+}
+
+}; // namespace jettaggingutilities
+
+#endif // PWGJE_CORE_JETTAGGINGUTILITIES_H_
+// Copyright 2019-2020 CERN and copyright holders of ALICE O2.
+// See https://alice-o2.web.cern.ch/copyright for details of the copyright holders.
+// All rights not expressly granted are reserved.
+//
+// This software is distributed under the terms of the GNU General Public
+// License v3 (GPL Version 3), copied verbatim in the file "COPYING".
+//
+// In applying this license CERN does not waive the privileges and immunities
+// granted to it by virtue of its status as an Intergovernmental Organization
+// or submit itself to any jurisdiction.
+
+/// \file JetBkgSubUtils.h
+/// \brief Jet background subtraction utilities
+///
+/// \author Hadi Hassan <hadi.hassan@cern.ch>, JYU
+
+#ifndef PWGJE_CORE_JETBKGSUBUTILS_H_
+#define PWGJE_CORE_JETBKGSUBUTILS_H_
+
+#include <fastjet/AreaDefinition.hh>
+#include <fastjet/GhostedAreaSpec.hh>
+#include <fastjet/JetDefinition.hh>
+#include <fastjet/PseudoJet.hh>
+#include <fastjet/Selector.hh>
+
+#include <tuple>
+#include <vector>
+
+#include <math.h>
+
+enum class BkgSubEstimator { none = 0,
+                             medianRho = 1,
+                             medianRhoSparse = 2,
+                             perpCone = 3
+};
+
+enum class BkgSubMode { none = 0,
+                        rhoAreaSub = 1,
+                        eventConstSub = 2,
+                        jetConstSub = 3
+};
+
+class JetBkgSubUtils
+{
+ public:
+  // Default contructor
+  JetBkgSubUtils() = default;
+
+  JetBkgSubUtils(float jetBkgR_out, float bkgEtaMin_out = -0.8, float bkgEtaMax_out = 0.8,
+                 float bkgPhiMin_out = 0., float bkgPhiMax_out = 2 * M_PI, float constSubAlpha_out = 1., float constSubRMax_out = 0.6, int nHardReject_out = 2, fastjet::GhostedAreaSpec ghostAreaSpec_out = fastjet::GhostedAreaSpec());
+
+  // Default destructor
+  ~JetBkgSubUtils() = default;
+
+  /// @brief Setting the selectors after the input values have been initialised
+  void initialise();
+
+  /// @brief Setting the jet algorithm and the recombination scheme
+  void setJetAlgorithmAndScheme(fastjet::JetAlgorithm algorithmBkg_out, fastjet::RecombinationScheme recombSchemeBkg_out)
+  {
+    algorithmBkg = algorithmBkg_out;
+    recombSchemeBkg = recombSchemeBkg_out;
+  }
+
+  /// @brief Method for estimating the jet background density using the median method or the sparse method
+  /// @param inputParticles (all particles in the event)
+  /// @param doSparseSub weather to do rho sparse subtraction
+  /// @return Rho, RhoM the underlying event density
+  std::tuple<double, double> estimateRhoAreaMedian(const std::vector<fastjet::PseudoJet>& inputParticles, bool doSparseSub);
+
+  /// @brief Background estimator using the perpendicular cone method
+  /// @param inputParticles
+  /// @param jets (all jets in the event)
+  /// @return Rho, RhoM the underlying event density
+  std::tuple<double, double> estimateRhoPerpCone(const std::vector<fastjet::PseudoJet>& inputParticles, const std::vector<fastjet::PseudoJet>& jets);
+
+  /// @brief method that subtracts the background from jets using the area method
+  /// @param jet input jet to be background subtracted
+  /// @param rhoParam the underlying evvent density vs pT (to be set)
+  /// @param rhoParam the underlying evvent density vs jet mass (to be set)
+  /// @return jet, background subtracted jet
+  fastjet::PseudoJet doRhoAreaSub(const fastjet::PseudoJet& jet, double rhoParam, double rhoMParam);
+
+  /// @brief method that subtracts the background from the input particles using the event-wise cosntituent subtractor
+  /// @param inputParticles (all the tracks/clusters/particles in the event)
+  /// @param rhoParam the underlying evvent density vs pT (to be set)
+  /// @param rhoParam the underlying evvent density vs jet mass (to be set)
+  /// @return inputParticles, a vector of background subtracted input particles
+  std::vector<fastjet::PseudoJet> doEventConstSub(std::vector<fastjet::PseudoJet>& inputParticles, double rhoParam, double rhoMParam);
+
+  /// @brief method that subtracts the background from jets using the jet-wise constituent subtractor
+  /// @param jets (all jets in the event)
+  /// @param rhoParam the underlying evvent density vs pT (to be set)
+  /// @param rhoParam the underlying evvent density vs jet mass (to be set)
+  /// @return jets, a vector of background subtracted jets
+  std::vector<fastjet::PseudoJet> doJetConstSub(std::vector<fastjet::PseudoJet>& jets, double rhoParam, double rhoMParam);
+
+  // Setters
+  void setJetBkgR(float jetbkgR_out) { jetBkgR = jetbkgR_out; }
+  void setPhiMinMax(float phimin_out, float phimax_out)
+  {
+    bkgPhiMin = phimin_out;
+    bkgPhiMax = phimax_out;
+  }
+  void setEtaMinMax(float etamin_out, float etamax_out)
+  {
+    bkgEtaMin = etamin_out;
+    bkgEtaMax = etamax_out;
+  }
+  void setConstSubAlphaRMax(float alpha_out, float rmax_out)
+  {
+    constSubAlpha = alpha_out;
+    constSubRMax = rmax_out;
+  }
+  void setMaxEtaEvent(float etaMaxEvent) { maxEtaEvent = etaMaxEvent; }
+  void setDoRhoMassSub(bool doMSub_out = true) { doRhoMassSub = doMSub_out; }
+  void setGhostAreaSpec(fastjet::GhostedAreaSpec ghostAreaSpec_out) { ghostAreaSpec = ghostAreaSpec_out; }
+  void setJetDefinition(fastjet::JetDefinition jetdefbkg_out) { jetDefBkg = jetdefbkg_out; }
+  void setAreaDefinition(fastjet::AreaDefinition areaDefBkg_out) { areaDefBkg = areaDefBkg_out; }
+  void setRhoSelector(fastjet::Selector selRho_out) { selRho = selRho_out; }
+
+  // Getters
+  float getJetBkgR() const { return jetBkgR; }
+  float getPhiMin() const { return bkgPhiMin; }
+  float getPhiMax() const { return bkgPhiMax; }
+  float getEtaMin() const { return bkgEtaMin; }
+  float getEtaMax() const { return bkgEtaMax; }
+  float getEtaMaxEvent() const { return maxEtaEvent; }
+  float getConstSubAlpha() const { return constSubAlpha; }
+  float getConstSubRMax() const { return constSubRMax; }
+  float getDoRhoMassSub() const { return doRhoMassSub; }
+  fastjet::GhostedAreaSpec getGhostAreaSpec() const { return ghostAreaSpec; }
+  fastjet::JetDefinition getJetDefinition() const { return jetDefBkg; }
+  fastjet::AreaDefinition getAreaDefinition() const { return areaDefBkg; }
+  fastjet::Selector getRhoSelector() const { return selRho; }
+
+  // Calculate the jet mass
+  double getMd(fastjet::PseudoJet jet) const;
+
+ protected:
+  float jetBkgR = 0.2;
+  float bkgEtaMin = -0.9;
+  float bkgEtaMax = 0.9;
+  float bkgPhiMin = 0.0;
+  float bkgPhiMax = 2.0 * M_PI;
+  float constSubAlpha = 1.0;
+  float constSubRMax = 0.24;
+  float maxEtaEvent = 0.9;
+  int nHardReject = 2;
+  bool doRhoMassSub = false; /// flag whether to do jet mass subtraction with the const sub
+
+  fastjet::GhostedAreaSpec ghostAreaSpec = fastjet::GhostedAreaSpec();
+  fastjet::JetAlgorithm algorithmBkg = fastjet::kt_algorithm;
+  fastjet::RecombinationScheme recombSchemeBkg = fastjet::E_scheme;
+  fastjet::JetDefinition jetDefBkg = fastjet::JetDefinition(algorithmBkg, jetBkgR, recombSchemeBkg, fastjet::Best);
+  fastjet::AreaDefinition areaDefBkg = fastjet::AreaDefinition(fastjet::active_area_explicit_ghosts, ghostAreaSpec);
+  fastjet::Selector selRho = fastjet::Selector();
+
+}; // class JetBkgSubUtils
+
+#endif // PWGJE_CORE_JETBKGSUBUTILS_H_
+// Copyright 2019-2020 CERN and copyright holders of ALICE O2.
+// See https://alice-o2.web.cern.ch/copyright for details of the copyright holders.
+// All rights not expressly granted are reserved.
+//
+// This software is distributed under the terms of the GNU General Public
+// License v3 (GPL Version 3), copied verbatim in the file "COPYING".
+//
+// In applying this license CERN does not waive the privileges and immunities
+// granted to it by virtue of its status as an Intergovernmental Organization
+// or submit itself to any jurisdiction.
+
+/// \file JetDetivedDataUtilities.h
+/// \brief Jet derived data related utilities
+///
+/// \author Nima Zardoshti <nima.zardoshti@cern.ch>
+
+#ifndef PWGJE_CORE_JETDERIVEDDATAUTILITIES_H_
+#define PWGJE_CORE_JETDERIVEDDATAUTILITIES_H_
+
+#include "Common/CCDB/EventSelectionParams.h"
+#include "Common/CCDB/TriggerAliases.h"
+
+#include <Rtypes.h>
+
+#include <array>
+#include <cstddef>
+#include <cstdint>
+#include <cstdlib>
+#include <string>
+#include <vector>
+
+namespace jetderiveddatautilities
+{
+
+static constexpr float mPion = 0.139; // TDatabasePDG::Instance()->GetParticle(211)->Mass(); //can be removed when pion mass becomes default for unidentified tracks
+
+enum JCollisionSel {
+  sel8 = 0,
+  sel7 = 1,
+  selKINT7 = 2,
+  selTVX = 3,
+  selNoTimeFrameBorder = 4,
+  selNoITSROFrameBorder = 5,
+  selNoSameBunchPileup = 6,
+  selIsGoodZvtxFT0vsPV = 7,
+  selNoCollInTimeRangeStandard = 8,
+  selNoCollInRofStandard = 9
+};
+
+enum JCollisionSubGeneratorId {
+  none = -1,
+  mbGap = 0
+};
+
+template <typename T>
+bool selectCollision(T const& collision, std::vector<int> eventSelectionMaskBits, bool skipMBGapEvents = true)
+{
+  if (skipMBGapEvents && collision.subGeneratorId() == JCollisionSubGeneratorId::mbGap) {
+    return false;
+  }
+  if (eventSelectionMaskBits.size() == 0) {
+    return true;
+  }
+  for (auto eventSelectionMaskBit : eventSelectionMaskBits) {
+    if (!(collision.eventSel() & (1 << eventSelectionMaskBit))) {
+      return false;
+    }
+  }
+  return true;
+}
+
+bool eventSelectionMasksContainSelection(std::string eventSelectionMasks, std::string selection)
+{
+  size_t position = 0;
+  while ((position = eventSelectionMasks.find(selection, position)) != std::string::npos) {
+    bool validStart = (position == 0 || eventSelectionMasks[position - 1] == '+');
+    bool validEnd = (position + selection.length() == eventSelectionMasks.length() || eventSelectionMasks[position + selection.length()] == '+');
+    if (validStart && validEnd) {
+      return true;
+    }
+    position += selection.length();
+  }
+  return false;
+}
+
+std::vector<int> initialiseEventSelectionBits(std::string eventSelectionMasks)
+{
+  std::vector<int> eventSelectionMaskBits;
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "sel8")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::sel8);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "sel7")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::sel7);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "selKINT7")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::selKINT7);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "TVX")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::selTVX);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "NoTimeFrameBorder")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoTimeFrameBorder);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "NoITSROFrameBorder")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoITSROFrameBorder);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "NoSameBunchPileup")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoSameBunchPileup);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "IsGoodZvtxFT0vsPV")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::selIsGoodZvtxFT0vsPV);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "NoCollInTimeRangeStandard")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoCollInTimeRangeStandard);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "NoCollInRofStandard")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoCollInRofStandard);
+  }
+
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "sel8Full")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::sel8);
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoSameBunchPileup);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "sel8FullPbPb")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::sel8);
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoCollInTimeRangeStandard);
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoCollInRofStandard);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "selUnanchoredMC")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::selTVX);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "selMC")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::selTVX);
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoTimeFrameBorder);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "selMCFull")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::selTVX);
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoTimeFrameBorder);
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoSameBunchPileup);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "selMCFullPbPb")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::selTVX);
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoCollInTimeRangeStandard);
+    eventSelectionMaskBits.push_back(JCollisionSel::selNoCollInRofStandard);
+  }
+  if (eventSelectionMasksContainSelection(eventSelectionMasks, "sel7KINT7")) {
+    eventSelectionMaskBits.push_back(JCollisionSel::sel7);
+    eventSelectionMaskBits.push_back(JCollisionSel::selKINT7);
+  }
+  return eventSelectionMaskBits;
+}
+
+template <typename T>
+uint16_t setEventSelectionBit(T const& collision)
+{
+  uint16_t bit = 0;
+  if (collision.sel8()) {
+    SETBIT(bit, JCollisionSel::sel8);
+  }
+  if (collision.sel7()) {
+    SETBIT(bit, JCollisionSel::sel7);
+  }
+  if (collision.alias_bit(kINT7)) {
+    SETBIT(bit, JCollisionSel::selKINT7);
+  }
+  if (collision.selection_bit(o2::aod::evsel::kIsTriggerTVX)) {
+    SETBIT(bit, JCollisionSel::selTVX);
+  }
+  if (collision.selection_bit(o2::aod::evsel::kNoTimeFrameBorder)) {
+    SETBIT(bit, JCollisionSel::selNoTimeFrameBorder);
+  }
+  if (collision.selection_bit(o2::aod::evsel::kNoITSROFrameBorder)) {
+    SETBIT(bit, JCollisionSel::selNoITSROFrameBorder);
+  }
+  if (collision.selection_bit(o2::aod::evsel::kNoSameBunchPileup)) {
+    SETBIT(bit, JCollisionSel::selNoSameBunchPileup);
+  }
+  if (collision.selection_bit(o2::aod::evsel::kIsGoodZvtxFT0vsPV)) {
+    SETBIT(bit, JCollisionSel::selIsGoodZvtxFT0vsPV);
+  }
+  if (collision.selection_bit(o2::aod::evsel::kNoCollInTimeRangeStandard)) {
+    SETBIT(bit, JCollisionSel::selNoCollInTimeRangeStandard);
+  }
+  if (collision.selection_bit(o2::aod::evsel::kNoCollInRofStandard)) {
+    SETBIT(bit, JCollisionSel::selNoCollInRofStandard);
+  }
+  return bit;
+}
+
+template <typename T>
+bool eventEMCAL(T const& collision)
+{
+  // Check for EMCAL in readout requires any of the EMCAL trigger classes (including EMC in MB trigger) to fire
+  std::array<triggerAliases, 11> selectAliases = {{triggerAliases::kTVXinEMC, triggerAliases::kEMC7, triggerAliases::kDMC7, triggerAliases::kEG1, triggerAliases::kEG2, triggerAliases::kDG1, triggerAliases::kDG2, triggerAliases::kEJ1, triggerAliases::kEJ2, triggerAliases::kDJ1, triggerAliases::kDJ2}};
+  bool found = false;
+  for (auto alias : selectAliases) {
+    if (collision.alias_bit(alias)) {
+      found = true;
+      break;
+    }
+  }
+  return found;
+}
+
+inline const std::string JTriggerMasks = "fJetChLowPt,fJetChHighPt,fTrackLowPt,fTrackHighPt,fJetD0ChLowPt,fJetD0ChHighPt,fJetLcChLowPt,fJetLcChHighPt,fEMCALReadout,fJetFullHighPt,fJetFullLowPt,fJetNeutralHighPt,fJetNeutralLowPt,fGammaVeryHighPtEMCAL,fGammaVeryHighPtDCAL,fGammaHighPtEMCAL,fGammaHighPtDCAL,fGammaLowPtEMCAL,fGammaLowPtDCAL,fGammaVeryLowPtEMCAL,fGammaVeryLowPtDCAL";
+
+enum JTrigSel {
+  noTrigSel = 0,
+  JetChLowPt = 1,
+  JetChHighPt = 2,
+  TrackLowPt = 3,
+  TrackHighPt = 4,
+  JetD0ChLowPt = 5,
+  JetD0ChHighPt = 6,
+  JetLcChLowPt = 7,
+  JetLcChHighPt = 8,
+  EMCALReadout = 9,
+  JetFullHighPt = 10,
+  JetFullLowPt = 11,
+  JetNeutralHighPt = 12,
+  JetNeutralLowPt = 13,
+  GammaVeryHighPtEMCAL = 14,
+  GammaVeryHighPtDCAL = 15,
+  GammaHighPtEMCAL = 16,
+  GammaHighPtDCAL = 17,
+  GammaLowPtEMCAL = 18,
+  GammaLowPtDCAL = 19,
+  GammaVeryLowPtEMCAL = 20,
+  GammaVeryLowPtDCAL = 21
+};
+
+template <typename T>
+bool selectTrigger(T const& collision, std::vector<int> triggerMaskBits)
+{
+  if (triggerMaskBits.size() == 0) {
+    return true;
+  }
+  for (auto triggerMaskBit : triggerMaskBits) {
+    if (collision.triggerSel() & (1 << triggerMaskBit)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+template <typename T>
+bool selectTrigger(T const& collision, int triggerMaskBit)
+{
+  if (triggerMaskBit == -1) {
+    return false;
+  }
+  return collision.triggerSel() & (1 << triggerMaskBit);
+}
+
+bool triggerMasksContainTrigger(std::string triggerMasks, std::string trigger)
+{
+  size_t position = 0;
+  while ((position = triggerMasks.find(trigger, position)) != std::string::npos) {
+    bool validStart = (position == 0 || triggerMasks[position - 1] == ',');
+    bool validEnd = (position + trigger.length() == triggerMasks.length() || triggerMasks[position + trigger.length()] == ',');
+    if (validStart && validEnd) {
+      return true;
+    }
+    position += trigger.length();
+  }
+  return false;
+}
+
+std::vector<int> initialiseTriggerMaskBits(std::string triggerMasks)
+{
+  std::vector<int> triggerMaskBits;
+  if (triggerMasksContainTrigger(triggerMasks, "fJetChLowPt")) {
+    triggerMaskBits.push_back(JTrigSel::JetChLowPt);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fJetChHighPt")) {
+    triggerMaskBits.push_back(JTrigSel::JetChHighPt);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fTrackLowPt")) {
+    triggerMaskBits.push_back(JTrigSel::TrackLowPt);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fTrackHighPt")) {
+    triggerMaskBits.push_back(JTrigSel::TrackHighPt);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fJetD0ChLowPt")) {
+    triggerMaskBits.push_back(JTrigSel::JetD0ChLowPt);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fJetD0ChHighPt")) {
+    triggerMaskBits.push_back(JTrigSel::JetD0ChHighPt);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fJetLcChLowPt")) {
+    triggerMaskBits.push_back(JTrigSel::JetLcChLowPt);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fJetLcChHighPt")) {
+    triggerMaskBits.push_back(JTrigSel::JetLcChHighPt);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fEMCALReadout")) {
+    triggerMaskBits.push_back(JTrigSel::EMCALReadout);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fJetFullHighPt")) {
+    triggerMaskBits.push_back(JTrigSel::JetFullHighPt);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fJetFullLowPt")) {
+    triggerMaskBits.push_back(JTrigSel::JetFullLowPt);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fJetNeutralHighPt")) {
+    triggerMaskBits.push_back(JTrigSel::JetNeutralHighPt);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fJetNeutralLowPt")) {
+    triggerMaskBits.push_back(JTrigSel::JetNeutralLowPt);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fGammaVeryHighPtEMCAL")) {
+    triggerMaskBits.push_back(JTrigSel::GammaVeryHighPtEMCAL);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fGammaVeryHighPtDCAL")) {
+    triggerMaskBits.push_back(JTrigSel::GammaVeryHighPtDCAL);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fGammaHighPtEMCAL")) {
+    triggerMaskBits.push_back(JTrigSel::GammaHighPtEMCAL);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fGammaHighPtDCAL")) {
+    triggerMaskBits.push_back(JTrigSel::GammaHighPtDCAL);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fGammaLowPtEMCAL")) {
+    triggerMaskBits.push_back(JTrigSel::GammaLowPtEMCAL);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fGammaLowPtDCAL")) {
+    triggerMaskBits.push_back(JTrigSel::GammaLowPtDCAL);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fGammaVeryLowPtEMCAL")) {
+    triggerMaskBits.push_back(JTrigSel::GammaVeryLowPtEMCAL);
+  }
+  if (triggerMasksContainTrigger(triggerMasks, "fGammaVeryLowPtDCAL")) {
+    triggerMaskBits.push_back(JTrigSel::GammaVeryLowPtDCAL);
+  }
+  return triggerMaskBits;
+}
+
+uint64_t setTriggerSelectionBit(std::vector<bool> triggerDecisions)
+{
+  uint64_t bit = 0;
+  for (std::vector<bool>::size_type i = 0; i < triggerDecisions.size(); i++) {
+    if (triggerDecisions[i]) {
+      SETBIT(bit, i + 1);
+    }
+  }
+  return bit;
+}
+
+enum JTrigSelCh {
+  noChargedTigger = 0,
+  jetChLowPt = 1,
+  jetChHighPt = 2,
+  trackLowPt = 3,
+  trackHighPt = 4
+};
+
+template <typename T>
+bool selectChargedTrigger(T const& collision, int triggerSelection)
+{
+  if (triggerSelection == -1) {
+    return true;
+  }
+  return (collision.chargedTriggerSel() & (1 << triggerSelection));
+}
+
+int initialiseChargedTriggerSelection(std::string triggerSelection)
+{
+  if (triggerSelection == "jetChLowPt") {
+    return JTrigSelCh::jetChLowPt;
+  }
+  if (triggerSelection == "jetChHighPt") {
+    return JTrigSelCh::jetChHighPt;
+  }
+  if (triggerSelection == "trackLowPt") {
+    return JTrigSelCh::trackLowPt;
+  }
+  if (triggerSelection == "trackHighPt") {
+    return JTrigSelCh::trackHighPt;
+  }
+
+  return -1;
+}
+
+template <typename T>
+uint8_t setChargedTriggerSelectionBit(T const& collision)
+{
+
+  uint8_t bit = 0;
+  if (collision.hasJetChLowPt()) {
+    SETBIT(bit, JTrigSelCh::jetChLowPt);
+  }
+  if (collision.hasJetChHighPt()) {
+    SETBIT(bit, JTrigSelCh::jetChHighPt);
+  }
+  if (collision.hasTrackLowPt()) {
+    SETBIT(bit, JTrigSelCh::trackLowPt);
+  }
+  if (collision.hasTrackHighPt()) {
+    SETBIT(bit, JTrigSelCh::trackHighPt);
+  }
+
+  return bit;
+}
+
+enum JTrigSelFull {
+  noFullTrigger = 0,
+  emcalReadout = 1,
+  jetFullHighPt = 2,
+  jetFullLowPt = 3,
+  jetNeutralHighPt = 4,
+  jetNeutralLowPt = 5,
+  gammaVeryHighPtEMCAL = 6,
+  gammaVeryHighPtDCAL = 7,
+  gammaHighPtEMCAL = 8,
+  gammaHighPtDCAL = 9,
+  gammaLowPtEMCAL = 10,
+  gammaLowPtDCAL = 11,
+  gammaVeryLowPtEMCAL = 12,
+  gammaVeryLowPtDCAL = 13
+};
+
+template <typename T>
+bool selectFullTrigger(T const& collision, int triggerSelection)
+{
+  if (triggerSelection == -1) {
+    return true;
+  }
+  return (collision.fullTriggerSel() & (1 << triggerSelection));
+}
+
+int initialiseFullTriggerSelection(std::string triggerSelection)
+{
+  if (triggerSelection == "emcalReadout") {
+    return JTrigSelFull::emcalReadout;
+  } else if (triggerSelection == "jetFullHighPt") {
+    return JTrigSelFull::jetFullHighPt;
+  } else if (triggerSelection == "jetFullLowPt") {
+    return JTrigSelFull::jetFullLowPt;
+  } else if (triggerSelection == "jetNeutralHighPt") {
+    return JTrigSelFull::jetNeutralHighPt;
+  } else if (triggerSelection == "jetNeutralLowPt") {
+    return JTrigSelFull::jetNeutralLowPt;
+  } else if (triggerSelection == "gammaVeryHighPtEMCAL") {
+    return JTrigSelFull::gammaVeryHighPtEMCAL;
+  } else if (triggerSelection == "gammaVeryHighPtDCAL") {
+    return JTrigSelFull::gammaVeryHighPtDCAL;
+  } else if (triggerSelection == "gammaHighPtEMCAL") {
+    return JTrigSelFull::gammaHighPtEMCAL;
+  } else if (triggerSelection == "gammaHighPtDCAL") {
+    return JTrigSelFull::gammaHighPtDCAL;
+  } else if (triggerSelection == "gammaLowPtEMCAL") {
+    return JTrigSelFull::gammaLowPtEMCAL;
+  } else if (triggerSelection == "gammaLowPtDCAL") {
+    return JTrigSelFull::gammaLowPtDCAL;
+  } else if (triggerSelection == "gammaVeryLowPtEMCAL") {
+    return JTrigSelFull::gammaVeryLowPtEMCAL;
+  } else if (triggerSelection == "gammaVeryLowPtDCAL") {
+    return JTrigSelFull::gammaVeryLowPtDCAL;
+  }
+  return -1;
+}
+
+template <typename T>
+uint32_t setFullTriggerSelectionBit(T const& collision)
+{
+  uint32_t bit = 0;
+  if (collision.hasEMCALinReadout()) {
+    SETBIT(bit, JTrigSelFull::emcalReadout);
+  }
+  if (collision.hasJetFullHighPt()) {
+    SETBIT(bit, JTrigSelFull::jetFullHighPt);
+  }
+  if (collision.hasJetFullLowPt()) {
+    SETBIT(bit, JTrigSelFull::jetFullLowPt);
+  }
+  if (collision.hasJetNeutralHighPt()) {
+    SETBIT(bit, JTrigSelFull::jetNeutralHighPt);
+  }
+  if (collision.hasJetNeutralLowPt()) {
+    SETBIT(bit, JTrigSelFull::jetNeutralLowPt);
+  }
+  if (collision.hasGammaVeryHighPtEMCAL()) {
+    SETBIT(bit, JTrigSelFull::gammaVeryHighPtEMCAL);
+  }
+  if (collision.hasGammaVeryHighPtDCAL()) {
+    SETBIT(bit, JTrigSelFull::gammaVeryHighPtDCAL);
+  }
+  if (collision.hasGammaHighPtEMCAL()) {
+    SETBIT(bit, JTrigSelFull::gammaHighPtEMCAL);
+  }
+  if (collision.hasGammaHighPtDCAL()) {
+    SETBIT(bit, JTrigSelFull::gammaHighPtDCAL);
+  }
+  if (collision.hasGammaLowPtEMCAL()) {
+    SETBIT(bit, JTrigSelFull::gammaLowPtEMCAL);
+  }
+  if (collision.hasGammaLowPtDCAL()) {
+    SETBIT(bit, JTrigSelFull::gammaLowPtDCAL);
+  }
+  if (collision.hasGammaVeryLowPtEMCAL()) {
+    SETBIT(bit, JTrigSelFull::gammaVeryLowPtEMCAL);
+  }
+  if (collision.hasGammaVeryLowPtDCAL()) {
+    SETBIT(bit, JTrigSelFull::gammaVeryLowPtDCAL);
+  }
+  return bit;
+}
+
+enum JTrigSelChHF {
+  noChargedHFTigger = 0,
+  jetD0ChLowPt = 1,
+  jetD0ChHighPt = 2,
+  jetLcChLowPt = 3,
+  jetLcChHighPt = 4
+};
+
+template <typename T>
+bool selectChargedHFTrigger(T const& collision, int triggerSelection)
+{
+  if (triggerSelection == -1) {
+    return true;
+  }
+  return (collision.chargedHFTriggerSel() & (1 << triggerSelection));
+}
+
+int initialiseChargedHFTriggerSelection(std::string triggerSelection)
+{
+  if (triggerSelection == "jetD0ChLowPt") {
+    return JTrigSelChHF::jetD0ChLowPt;
+  }
+  if (triggerSelection == "jetD0ChHighPt") {
+    return JTrigSelChHF::jetD0ChHighPt;
+  }
+  if (triggerSelection == "jetLcChLowPt") {
+    return JTrigSelChHF::jetLcChLowPt;
+  }
+  if (triggerSelection == "jetLcChHighPt") {
+    return JTrigSelChHF::jetLcChHighPt;
+  }
+  return -1;
+}
+
+template <typename T>
+uint8_t setChargedHFTriggerSelectionBit(T const& collision)
+{
+
+  uint8_t bit = 0;
+  if (collision.hasJetD0ChLowPt()) {
+    SETBIT(bit, JTrigSelChHF::jetD0ChLowPt);
+  }
+  if (collision.hasJetD0ChHighPt()) {
+    SETBIT(bit, JTrigSelChHF::jetD0ChHighPt);
+  }
+  if (collision.hasJetLcChLowPt()) {
+    SETBIT(bit, JTrigSelChHF::jetLcChLowPt);
+  }
+  if (collision.hasJetLcChHighPt()) {
+    SETBIT(bit, JTrigSelChHF::jetLcChHighPt);
+  }
+  return bit;
+}
+
+enum JTrackSel {
+  trackSign = 0, // warning : this number is hardcoded in the sign coloumn in the JTracks table so should not be changed without changing it there too
+  globalTrack = 1,
+  qualityTrack = 2,
+  qualityTrackWDCA = 3,
+  hybridTrack = 4
+};
+
+template <typename T>
+bool applyTrackKinematics(T const& track, float pTMin = 0.15, float pTMax = 100., float EtaMin = -0.9, float EtaMax = 0.9, float PhiMin = -99., float PhiMax = 99.)
+{
+  if (track.pt() < pTMin || track.pt() > pTMax || track.eta() < EtaMin || track.eta() > EtaMax || track.phi() < PhiMin || track.phi() > PhiMax) {
+    return false;
+  }
+  return true;
+}
+
+template <typename T>
+bool selectTrack(T const& track, int trackSelection)
+{
+  if (trackSelection == -1) {
+    return true;
+  }
+  return (track.trackSel() & (1 << trackSelection));
+}
+
+int initialiseTrackSelection(std::string trackSelection)
+{
+  if (trackSelection == "globalTracks") {
+    return JTrackSel::globalTrack;
+  } else if (trackSelection == "QualityTracks") {
+    return JTrackSel::qualityTrack;
+  } else if (trackSelection == "QualityTracksWDCA") {
+    return JTrackSel::qualityTrackWDCA;
+  } else if (trackSelection == "hybridTracks") {
+    return JTrackSel::hybridTrack;
+  }
+  return -1;
+}
+
+template <typename T>
+uint8_t setTrackSelectionBit(T const& track, float trackDCAZ, float maxDCAZ)
+{
+
+  uint8_t bit = 0;
+
+  if (track.sign() == 1) {
+    SETBIT(bit, JTrackSel::trackSign);
+  }
+  if (track.isGlobalTrackWoPtEta()) {
+    SETBIT(bit, JTrackSel::globalTrack);
+  }
+  if (track.isQualityTrack()) {
+    SETBIT(bit, JTrackSel::qualityTrack);
+    if (std::abs(trackDCAZ) < maxDCAZ) {
+      SETBIT(bit, JTrackSel::qualityTrackWDCA);
+    }
+  }
+  if (track.trackCutFlagFb5()) {
+    SETBIT(bit, JTrackSel::hybridTrack);
+  }
+  return bit;
+}
+
+uint8_t setSingleTrackSelectionBit(int trackSelection)
+{
+  uint8_t bit = 0;
+  if (trackSelection != -1) {
+    SETBIT(bit, trackSelection);
+  }
+  return bit;
+}
+
+template <typename T>
+float trackEnergy(T const& track, float mass = mPion)
+{
+  return std::sqrt((track.p() * track.p()) + (mass * mass));
+}
+
+template <typename T>
+bool selectTrackDcaZ(T const& track, double dcaZmax = 99.)
+{
+  return abs(track.dcaZ()) < dcaZmax;
+}
+
+} // namespace jetderiveddatautilities
+
+#endif // PWGJE_CORE_JETDERIVEDDATAUTILITIES_H_
+// Copyright 2019-2020 CERN and copyright holders of ALICE O2.
+// See https://alice-o2.web.cern.ch/copyright for details of the copyright holders.
+// All rights not expressly granted are reserved.
+//
+// This software is distributed under the terms of the GNU General Public
+// License v3 (GPL Version 3), copied verbatim in the file "COPYING".
+//
+// In applying this license CERN does not waive the privileges and immunities
+// granted to it by virtue of its status as an Intergovernmental Organization
+// or submit itself to any jurisdiction.
+
+/// \file emcalCrossTalkEmulation.h
+/// \brief emulation of emcal cross talk for simulations
+/// \author Marvin Hemmer <marvin.hemmer@cern.ch>, Goethe-University
+
+#ifndef PWGJE_CORE_EMCALCROSSTALKEMULATION_H_
+#define PWGJE_CORE_EMCALCROSSTALKEMULATION_H_
+
+#include <DataFormatsEMCAL/Cell.h>
+#include <DataFormatsEMCAL/CellLabel.h>
+#include <EMCALBase/Geometry.h>
+#include <Framework/Array2D.h>
+#include <Framework/Configurable.h>
+#include <Framework/HistogramRegistry.h>
+
+#include <TH1.h>
+#include <TRandom3.h>
+
+#include <array>
+#include <string>
+#include <vector>
+
+namespace o2::emccrosstalk
+{
+// cell types for enegery induction
+enum InductionCellType {
+  UpDown = 0,
+  UpDownLeftRight,
+  LeftRight,
+  Up2Down2,
+  NInductionCellType
+};
+
+// default values for cross talk emulation
+// small value to use for comarison equal to 0, std::abs(x) > epsilon
+static constexpr float Epsilon = 1e-6f;
+
+// default for inducedEnergyLossConstant
+// static constexpr float DefaultIELC[1][4] = {{0.02f, 0.02f, 0.02f, 0.f}}; // default from https://github.com/alisw/AliPhysics/blob/master/PWG/EMCAL/config/AliEmcalCorrectionConfiguration.yaml (but is deactivated per default)
+static constexpr float DefaultIELC[1][4] = {{0.f, 0.f, 0.f, 0.f}}; // default from pp 13 TeV
+
+// default for inducedEnergyLossFraction, default from https://github.com/alisw/AliPhysics/blob/master/PWG/EMCAL/config/AliEmcalCorrectionConfiguration.yaml same as in https://cds.cern.ch/record/2910556/
+static constexpr float DefaultIELF[20][4] = {{1.15e-02, 1.15e-02, 1.15e-02, 0.f},
+                                             {1.20e-02, 1.20e-02, 1.20e-02, 0.f},
+                                             {1.15e-02, 1.15e-02, 1.15e-02, 0.f},
+                                             {1.20e-02, 1.20e-02, 1.20e-02, 0.f},
+                                             {1.15e-02, 1.15e-02, 1.15e-02, 0.f},
+                                             {1.15e-02, 1.15e-02, 1.15e-02, 0.f},
+                                             {1.15e-02, 1.15e-02, 1.15e-02, 0.f},
+                                             {1.20e-02, 1.20e-02, 1.20e-02, 0.f},
+                                             {0.80e-02, 0.80e-02, 0.80e-02, 0.f},
+                                             {0.80e-02, 0.80e-02, 0.80e-02, 0.f},
+                                             {1.20e-02, 1.20e-02, 1.20e-02, 0.f},
+                                             {1.15e-02, 1.15e-02, 1.15e-02, 0.f},
+                                             {1.15e-02, 1.15e-02, 1.15e-02, 0.f},
+                                             {1.15e-02, 1.15e-02, 1.15e-02, 0.f},
+                                             {0.80e-02, 0.80e-02, 0.80e-02, 0.f},
+                                             {0.80e-02, 0.80e-02, 0.80e-02, 0.f},
+                                             {1.15e-02, 1.15e-02, 1.15e-02, 0.f},
+                                             {0.80e-02, 0.80e-02, 0.80e-02, 0.f},
+                                             {0.80e-02, 0.80e-02, 0.80e-02, 0.f},
+                                             {0.80e-02, 0.80e-02, 0.80e-02, 0.f}};
+
+// default for inducedEnergyLossFractionP1, default from https://github.com/alisw/AliPhysics/blob/master/PWG/EMCAL/config/AliEmcalCorrectionConfiguration.yaml same as in https://cds.cern.ch/record/2910556/
+static constexpr float DefaultIELFP1[1][4] = {{-1.1e-03, -1.1e-03, -1.1e-03, 0.f}};
+
+// default for inducedEnergyLossFractionWidth, default from https://github.com/alisw/AliPhysics/blob/master/PWG/EMCAL/config/AliEmcalCorrectionConfiguration.yaml same as in https://cds.cern.ch/record/2910556/
+static constexpr float DefaultIELFWidth[1][4] = {{5.0e-03, 5.0e-03, 5.0e-03, 0.f}};
+
+// default for inducedEnergyLossMinimumFractionCentralEta, IF someone wants to try it. This is purely to document those test numbers from AliEmcalCorrectionConfiguration.yaml! Default is to not use this! Values from default from https://github.com/alisw/AliPhysics/blob/master/PWG/EMCAL/config/AliEmcalCorrectionConfiguration.yaml
+// std::vector<float> DefaultIELMFCE = {6.8e-3, 7.5e-3, 6.8e-3, 9.0e-3, 6.8e-3, 6.8e-3, 6.8e-3, 9.0e-3, 5.2e-3, 5.2e-3, 7.5e-3, 6.8e-3, 6.8e-3, 6.8e-3, 5.2e-3, 5.2e-3, 6.8e-3, 5.2e-3, 5.2e-3, 5.2e-3};
+
+struct EmcCrossTalkConf : o2::framework::ConfigurableGroup {
+  std::string prefix = "emccrosstalk";
+  o2::framework::Configurable<bool> enableCrossTalk{"enableCrossTalk", false, "Flag to enable cross talk emulation. This should only ever be used for MC!"};
+  o2::framework::Configurable<bool> createHistograms{"createHistograms", false, "Flag to enable QA histograms."};
+  o2::framework::Configurable<bool> printConfiguration{"printConfiguration", true, "Flag to print the configuration after initialization."};
+  o2::framework::Configurable<bool> conserveEnergy{"conserveEnergy", true, "Flag to enable cluster energy conservation."};
+  o2::framework::Configurable<bool> randomizeTCardInducedEnergy{"randomizeTCardInducedEnergy", true, "Flag to randomize the energy fraction induced by the TCard."};
+  o2::framework::Configurable<float> inducedTCardMinimumCellEnergy{"inducedTCardMinimumCellEnergy", 0.01f, "Minimum cell energy in GeV induced by the TCard."};
+  o2::framework::Configurable<float> inducedTCardMaximum{"inducedTCardMaximum", 100.f, "Maximum energy in GeV induced by the TCard."};
+  o2::framework::Configurable<float> inducedTCardMinimum{"inducedTCardMinimum", 0.1f, "Minimum energy in GeV induced by the TCard + cell energy, IMPORTANT use the same value as the clusterization cell E threshold or not too far from it."};
+  o2::framework::Configurable<float> inducedTCardMaximumELeak{"inducedTCardMaximumELeak", 0.f, "Maximum energy in GeV that is going to be leaked independently of what is set with inducedTCardMinimum."};
+  // For each of the following Array2D configurables we will use:
+  // empty vector == disabled
+  // vector of size 4 == same for all SM
+  // vector of vectors with size nSM * 4 == each SM has its own setting
+  // the 4 values (0-3) correspond to in relative [row,col]: 0: [+-1,0], 1: [+-1,+or-1], 2:  [0,+or-1], 3: [+-2, 0 AND +or-1]
+  // +---+---+-----+---+---+--+--+--+
+  // | 3 | 0 | Hit | 0 | 3 |  |  |  |
+  // +---+---+-----+---+---+--+--+--+
+  // | 3 | 1 |  2  | 1 | 3 |  |  |  |
+  // +---+---+-----+---+---+--+--+--+
+  // For the std::vector<float> it is similar, empty vector means not used, single value means one value for all SM and 20 values means specifiyng a value for all SM
+  o2::framework::Configurable<o2::framework::Array2D<float>> inducedEnergyLossConstant{"inducedEnergyLossConstant", {DefaultIELC[0], 1, 4}, "Constant energy lost by max energy cell in one of T-Card cells. Empty vector == disabled, size 4 vector == enabled. For information on the exact formatting please check the header file."};
+  o2::framework::Configurable<o2::framework::Array2D<float>> inducedEnergyLossFraction{"inducedEnergyLossFraction", {DefaultIELF[0], 20, 4}, "Fraction of energy lost by max energy cell in one of T-Card cells."};
+  o2::framework::Configurable<o2::framework::Array2D<float>> inducedEnergyLossFractionP1{"inducedEnergyLossFractionP1", {DefaultIELFP1[0], 1, 4}, "Slope parameter of fraction of energy lost by max energy cell in one of T-Card cells."};
+  o2::framework::Configurable<o2::framework::Array2D<float>> inducedEnergyLossFractionWidth{"inducedEnergyLossFractionWidth", {DefaultIELFWidth[0], 1, 4}, "Fraction of energy lost by max energy cell in one of T-Card cells, width of random gaussian."};
+  // default from https://github.com/alisw/AliPhysics/blob/master/PWG/EMCAL/config/AliEmcalCorrectionConfiguration.yaml :
+  // o2::framework::Configurable<std::vector<float>> inducedEnergyLossMinimumFraction{"inducedEnergyLossMinimumFraction", {3.5e-3f, 5.0e-3f, 4.5e-3f, 6.0e-3f, 3.5e-3f, 3.5e-3f, 3.5e-3f, 6.0e-3f, 3.5e-3f, 3.5e-3f, 5.0e-3f, 5.0e-3f, 3.5e-3f, 3.5e-3f, 3.5e-3f, 3.5e-3f, 3.5e-3f, 3.5e-3f, 3.5e-3f, 3.5e-3f}, "Minimum induced energy fraction when linear dependency is set."};
+  // value from https://cds.cern.ch/record/2910556/:
+  o2::framework::Configurable<std::vector<float>> inducedEnergyLossMinimumFraction{"inducedEnergyLossMinimumFraction", {2.35e-3f, 2.5e-3f, 2.35e-3f, 3.0e-3f, 2.35e-3f, 2.35e-3f, 2.35e-3f, 3.0e-3f, 1.75e-3f, 1.75e-3f, 2.5e-3f, 2.35e-3f, 2.35e-3f, 2.35e-3f, 1.75e-3f, 1.75e-3f, 2.35e-3f, 1.75e-3f, 1.75e-3f, 1.75e-3f}, "Minimum induced energy fraction when linear dependency is set."};
+
+  o2::framework::Configurable<std::vector<float>> inducedEnergyLossMinimumFractionCentralEta{"inducedEnergyLossMinimumFractionCentralEta", {}, "Minimum induced energy fraction when linear dependency is set. For |eta| < 0.22, if empty no difference in eta. NOT TUNED for TESTING!"};
+
+  // default from https://github.com/alisw/AliPhysics/blob/master/PWG/EMCAL/config/AliEmcalCorrectionConfiguration.yaml :
+  // o2::framework::Configurable<std::vector<float>> inducedEnergyLossMaximumFraction{"inducedEnergyLossMaximumFraction", {0.018f}, "Maximum induced energy fraction when linear dependency is set."};
+  // value from https://cds.cern.ch/record/2910556/:
+  o2::framework::Configurable<std::vector<float>> inducedEnergyLossMaximumFraction{"inducedEnergyLossMaximumFraction", {0.016f, 0.016f, 0.016f, 0.018f, 0.016f, 0.016f, 0.016f, 0.018f, 0.016f, 0.016f, 0.016f, 0.016f, 0.016f, 0.016f, 0.016f, 0.016f, 0.016f, 0.016f, 0.016f, 0.016f}, "Maximum induced energy fraction when linear dependency is set."};
+  o2::framework::Configurable<std::vector<float>> inducedEnergyLossProbability{"inducedEnergyLossProbability", {1.0f}, "Fraction of times max cell energy correlates with cross cells."};
+};
+
+static constexpr int NSM = 20;                // Number of Supermodules (12 for EMCal + 8 for DCal)
+static constexpr int NCells = 17664;          // Number of cells in the EMCal
+static constexpr int NNeighbourCases = 4;     // 0-same row, diff col, 1-up/down cells left/right col 2-left/righ col, and 2nd row cells
+static constexpr int FirstDCal23SM = 12;      // index of the first 2/3 DCal SM
+static constexpr int LastDCal23SM = 17;       // index of the last 2/3 DCal SM
+static constexpr float MinCellEnergy = 0.01f; // Minimum energy a new cell needs to be added
+
+static constexpr int NColumns[NSM] = {48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 32, 32, 32, 32, 32, 32, 48, 48};
+static constexpr int NRows[NSM] = {24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 8, 8, 24, 24, 24, 24, 24, 24, 8, 8};
+
+// these labels are for later once labeledArrays work on hyperloop. Currently they sadly only allow fixed size not variable size.
+// static const std::vector<std::string> labelsSM{"SM0/all", "SM1", "SM2", "SM3", "SM4", "SM5", "SM6", "SM7", "SM8", "SM9", "SM10", "SM11", "SM12", "SM13", "SM14", "SM15", "SM16", "SM17", "SM18", "SM19"};
+// static const std::vector<std::string> labelsCells = {"Up&Down", "Up&Down x Left|Right", "Left|Right", "2Up&Down + 2Up&Down xLeft|Right"};
+
+class EMCCrossTalk
+{
+
+ public:
+  ~EMCCrossTalk()
+  {
+    LOG(info) << "Destroying EMCCrossTalk";
+  }
+
+  /// \brief Basic init function.
+  /// \param config configurable group containing the config for the cross talk emulation
+  void initObjects(const EmcCrossTalkConf& config);
+
+  /// \brief Reset arrays containing information for all possible cells.
+  /// \details mTCardCorrCellsEner and mTCardCorrCellsNew
+  void resetArrays();
+
+  /// \brief Sets the pointer the current vector of cells.
+  /// \param cells pointer to emcal cells of the current event
+  /// \param cellLabels pointer to emcal cell labels of the current event
+  void setCells(std::vector<o2::emcal::Cell>& cells, std::vector<o2::emcal::CellLabel>& cellLabels);
+
+  /// \brief Main function to call later to perform the full cross talk emulation
+  /// \return flag if everything went well or not
+  bool run();
+
+  /// \brief Recover each cell amplitude and absId and induce energy in cells in cross of the same T-Card
+  void makeCellTCardCorrelation();
+
+  /// \brief Add to existing cells the found induced energies in makeCellTCardCorrelation() if new signal is larger than 10 MeV.
+  /// \details Need to destroy/create the default cells list and do a copy from the old to the new via a temporal array fAODCellsTmp. Not too nice or fast, but it works.
+  void addInducedEnergiesToExistingCells();
+
+  /// \brief Add new cells with found induced energies in makeCellTCardCorrelation() if new signal is larger than 10 MeV.
+  void addInducedEnergiesToNewCells();
+
+  /// \brief Calculate the induced energy in a cell belonging to thesame T-Card as the reference cell. Used in makeCellTCardCorrelation()
+  /// \param absId Id number of cell in same T-Card as reference cell
+  /// \param absIdRef Id number of reference cell
+  /// \param iSM Supermodule number of cell
+  /// \param ampRef Amplitude of the reference cell
+  /// \param cellCase Type of cell with respect reference cell 0: up or down, 1: up or down on the diagonal, 2: left or right, 3: 2nd row up/down both left/right
+  void calculateInducedEnergyInTCardCell(int absId, int absIdRef, int iSM, float ampRef, int cellCase);
+
+ private:
+  // T-Card correlation emulation, do on MC
+  bool mTCardCorrClusEnerConserv;                // When making correlation, subtract from the reference cell the induced energy on the neighbour cells
+  std::array<float, NCells> mTCardCorrCellsEner; //  Array with induced cell energy in T-Card neighbour cells
+  std::array<bool, NCells> mTCardCorrCellsNew;   //  Array with induced cell energy in T-Card neighbour cells, that before had no signal
+
+  o2::framework::Array2D<float> mTCardCorrInduceEner;           // Induced energy loss gauss constant on 0-same row, diff col, 1-up/down cells left/right col 2-left/righ col, and 2nd row cells, param 0
+  o2::framework::Array2D<float> mTCardCorrInduceEnerFrac;       // Induced energy loss gauss fraction param0 on 0-same row, diff col, 1-up/down cells left/right col 2-left/righ col, and 2nd row cells, param 0
+  o2::framework::Array2D<float> mTCardCorrInduceEnerFracP1;     // Induced energy loss gauss fraction param1 on 0-same row, diff col, 1-up/down cells left/right col 2-left/righ col, and 2nd row cells, param1
+  o2::framework::Array2D<float> mTCardCorrInduceEnerFracWidth;  // Induced energy loss gauss witdth on 0-same row, diff col, 1-up/down cells left/right col 2-left/righ col, and 2nd row cells
+  std::array<float, NSM> mTCardCorrInduceEnerFracMax;           // In case fTCardCorrInduceEnerFracP1  is non null, restrict the maximum fraction of induced energy per SM
+  std::array<float, NSM> mTCardCorrInduceEnerFracMin;           // In case fTCardCorrInduceEnerFracP1  is non null, restrict the minimum fraction of induced energy per SM
+  std::array<float, NSM> mTCardCorrInduceEnerFracMinCentralEta; // In case fTCardCorrInduceEnerFracP1  is non null, restrict the minimum fraction of induced energy per SM. Different at central |eta| < 0.22
+  std::array<float, NSM> mTCardCorrInduceEnerProb;              // Probability to induce energy loss per SM
+
+  TRandom3 mRandom;     //  Random generator
+  bool mRandomizeTCard; //  Use random induced energy
+
+  float mTCardCorrMinAmp;          //  Minimum cell energy to induce signal on adjacent cells
+  float mTCardCorrMinInduced;      //  Minimum induced energy signal on adjacent cells, sum of induced plus original energy, use same as cell energy clusterization cut
+  float mTCardCorrMaxInducedELeak; //  Maximum value of induced energy signal that is always leaked, ~5-10 MeV
+  float mTCardCorrMaxInduced;      //  Maximum induced energy signal on adjacent cells
+
+  std::vector<o2::emcal::Cell>* mCells = nullptr;           // Pointer to the original cells of the current event
+  std::vector<o2::emcal::CellLabel>* mCellLabels = nullptr; // Pointer to the original cell labels of the current event
+  std::vector<o2::emcal::Cell> mCellsTmp;                   // Temporal vector of cells (copy)
+
+  o2::emcal::Geometry* mGeometry; // EMCal geometry
+};
+
+} // namespace o2::emccrosstalk
+
+#endif // PWGJE_CORE_EMCALCROSSTALKEMULATION_H_
+// Copyright 2019-2020 CERN and copyright holders of ALICE O2.
+// See https://alice-o2.web.cern.ch/copyright for details of the copyright holders.
+// All rights not expressly granted are reserved.
+//
+// This software is distributed under the terms of the GNU General Public
+// License v3 (GPL Version 3), copied verbatim in the file "COPYING".
+//
+// In applying this license CERN does not waive the privileges and immunities
+// granted to it by virtue of its status as an Intergovernmental Organization
+// or submit itself to any jurisdiction.
+
+/// \file utilsTrackMatchingEMC.h
+/// \brief EMCal track matching related utils
+/// \author Marvin Hemmer <marvin.hemmer@cern.ch>
+
+#ifndef PWGJE_CORE_UTILSTRACKMATCHINGEMC_H_
+#define PWGJE_CORE_UTILSTRACKMATCHINGEMC_H_
+
+#include <TKDTree.h>
+
+#include <algorithm>
+#include <cmath>
+#include <cstddef>
+#include <limits>
+#include <span>
+#include <stdexcept>
+#include <vector>
+
+namespace tmemcutilities
+{
+
+struct MatchResult {
+  std::vector<std::vector<int>> matchIndexTrack;
+  std::vector<std::vector<float>> matchDeltaPhi;
+  std::vector<std::vector<float>> matchDeltaEta;
+};
+
+/**
+ * Match clusters and tracks.
+ *
+ * Match cluster with tracks, where maxNumberMatches are considered in dR=maxMatchingDistance.
+ * If no unique match was found for a jet, an index of -1 is stored.
+ * The same map is created for clusters matched to tracks e.g. for electron analyses.
+ *
+ * @param clusterPhi cluster collection phi.
+ * @param clusterEta cluster collection eta.
+ * @param trackPhi track collection phi.
+ * @param trackEta track collection eta.
+ * @param maxMatchingDistance Maximum matching distance.
+ * @param maxNumberMatches Maximum number of matches (e.g. 5 closest).
+ *
+ * @returns (cluster to track index map, track to cluster index map)
+ */
+MatchResult matchTracksToCluster(
+  std::span<float> clusterPhi,
+  std::span<float> clusterEta,
+  std::span<float> trackPhi,
+  std::span<float> trackEta,
+  double maxMatchingDistance,
+  int maxNumberMatches)
+{
+  const std::size_t nClusters = clusterEta.size();
+  const std::size_t nTracks = trackEta.size();
+  MatchResult result;
+
+  if (nClusters == 0 || nTracks == 0) {
+    // There are no jets, so nothing to be done.
+    return result;
+  }
+  // Input sizes must match
+  if (clusterPhi.size() != clusterEta.size()) {
+    throw std::invalid_argument("cluster collection eta and phi sizes don't match. Check the inputs.");
+  }
+  if (trackPhi.size() != trackEta.size()) {
+    throw std::invalid_argument("track collection eta and phi sizes don't match. Check the inputs.");
+  }
+
+  result.matchIndexTrack.resize(nClusters);
+  result.matchDeltaPhi.resize(nClusters);
+  result.matchDeltaEta.resize(nClusters);
+
+  // Build the KD-trees using vectors
+  // We build two trees:
+  // treeBase, which contains the base collection.
+  // treeTag, which contains the tag collection.
+  // The trees are built to match in two dimensions (eta, phi)
+  TKDTree<int, float> treeTrack(trackEta.size(), 2, 1);
+  treeTrack.SetData(0, trackEta.data());
+  treeTrack.SetData(1, trackPhi.data());
+  treeTrack.Build();
+
+  // Find the track closest to each cluster.
+  for (std::size_t iCluster = 0; iCluster < nClusters; iCluster++) {
+    float point[2] = {clusterEta[iCluster], clusterPhi[iCluster]};
+    int index[50];      // size 50 for safety
+    float distance[50]; // size 50 for safery
+    std::fill_n(index, 50, -1);
+    std::fill_n(distance, 50, std::numeric_limits<float>::max());
+    treeTrack.FindNearestNeighbors(point, maxNumberMatches, index, distance);
+
+    // allocate enough memory
+    result.matchIndexTrack[iCluster].reserve(maxNumberMatches);
+    result.matchDeltaPhi[iCluster].reserve(maxNumberMatches);
+    result.matchDeltaEta[iCluster].reserve(maxNumberMatches);
+
+    // test whether indices are matching:
+    for (int m = 0; m < maxNumberMatches; m++) {
+      if (index[m] >= 0 && distance[m] < maxMatchingDistance) {
+        result.matchIndexTrack[iCluster].push_back(index[m]);
+        result.matchDeltaPhi[iCluster].push_back(trackPhi[index[m]] - clusterPhi[iCluster]);
+        result.matchDeltaEta[iCluster].push_back(trackEta[index[m]] - clusterEta[iCluster]);
+      }
+    }
+  }
+  return result;
+}
+}; // namespace tmemcutilities
+
+#endif // PWGJE_CORE_UTILSTRACKMATCHINGEMC_H_
+
+#undef  _BACKWARD_BACKWARD_WARNING_H
+
+In file included from G__O2MathUtils dictionary payload:4368:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/legendre.hpp:16:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/math_fwd.hpp:29:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/detail/round_fwd.hpp:11:
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/tools/config.hpp:481:13: error: expected ';' at end of declaration
+inline T max BOOST_PREVENT_MACRO_SUBSTITUTION(T a, T b, T c) BOOST_MATH_NOEXCEPT(T)
+            ^
+            ;
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/tools/config.hpp:481:47: error: use of undeclared identifier 'T'
+inline T max BOOST_PREVENT_MACRO_SUBSTITUTION(T a, T b, T c) BOOST_MATH_NOEXCEPT(T)
+                                              ^
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/tools/config.hpp:481:52: error: use of undeclared identifier 'T'
+inline T max BOOST_PREVENT_MACRO_SUBSTITUTION(T a, T b, T c) BOOST_MATH_NOEXCEPT(T)
+                                                   ^
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/tools/config.hpp:481:57: error: use of undeclared identifier 'T'
+inline T max BOOST_PREVENT_MACRO_SUBSTITUTION(T a, T b, T c) BOOST_MATH_NOEXCEPT(T)
+                                                        ^
+In file included from G__O2MathUtils dictionary payload:4368:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/legendre.hpp:16:
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/math_fwd.hpp:1090:4: error: unknown type name 'BOOST_CXX14_CONSTEXPR'
+   BOOST_CXX14_CONSTEXPR tools::promote_args_t<T> pow(T base, const Policy& policy);
+   ^
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/math_fwd.hpp:1090:33: error: no variable template matches partial specialization
+   BOOST_CXX14_CONSTEXPR tools::promote_args_t<T> pow(T base, const Policy& policy);
+                                ^
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/math_fwd.hpp:1090:50: error: expected ';' at end of declaration
+   BOOST_CXX14_CONSTEXPR tools::promote_args_t<T> pow(T base, const Policy& policy);
+                                                 ^
+                                                 ;
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/math_fwd.hpp:1090:55: error: use of undeclared identifier 'T'
+   BOOST_CXX14_CONSTEXPR tools::promote_args_t<T> pow(T base, const Policy& policy);
+                                                      ^
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/math_fwd.hpp:1090:63: error: expected expression
+   BOOST_CXX14_CONSTEXPR tools::promote_args_t<T> pow(T base, const Policy& policy);
+                                                              ^
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/math_fwd.hpp:1093:4: error: unknown type name 'BOOST_CXX14_CONSTEXPR'
+   BOOST_CXX14_CONSTEXPR tools::promote_args_t<T> pow(T base);
+   ^
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/math_fwd.hpp:1093:33: error: no variable template matches partial specialization
+   BOOST_CXX14_CONSTEXPR tools::promote_args_t<T> pow(T base);
+                                ^
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/math_fwd.hpp:1093:50: error: expected ';' at end of declaration
+   BOOST_CXX14_CONSTEXPR tools::promote_args_t<T> pow(T base);
+                                                 ^
+                                                 ;
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/math_fwd.hpp:1093:55: error: use of undeclared identifier 'T'
+   BOOST_CXX14_CONSTEXPR tools::promote_args_t<T> pow(T base);
+                                                      ^
+In file included from G__O2MathUtils dictionary payload:4368:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/legendre.hpp:17:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/factorials.hpp:14:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/gamma.hpp:23:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/policies/error_handling.hpp:26:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/tools/throw_exception.hpp:13:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/throw_exception.hpp:21:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/exception/exception.hpp:9:
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/assert/source_location.hpp:37:5: error: unknown type name 'BOOST_CONSTEXPR'
+    BOOST_CONSTEXPR source_location() BOOST_NOEXCEPT: file_( "" ), function_( "" ), line_( 0 ), column_( 0 )
+    ^
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/assert/source_location.hpp:37:21: error: constructor cannot have a return type
+    BOOST_CONSTEXPR source_location() BOOST_NOEXCEPT: file_( "" ), function_( "" ), line_( 0 ), column_( 0 )
+                    ^~~~~~~~~~~~~~~
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/assert/source_location.hpp:37:38: error: expected ';' at end of declaration list
+    BOOST_CONSTEXPR source_location() BOOST_NOEXCEPT: file_( "" ), function_( "" ), line_( 0 ), column_( 0 )
+                                     ^
+                                     ;
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/assert/source_location.hpp:139:15: error: no member named 'to_string' in 'boost::source_location'
+    os << loc.to_string();
+          ~~~ ^
+In file included from G__O2MathUtils dictionary payload:4368:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/legendre.hpp:17:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/factorials.hpp:14:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/special_functions/gamma.hpp:23:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/policies/error_handling.hpp:26:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/math/tools/throw_exception.hpp:13:
+In file included from /Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/throw_exception.hpp:21:
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/exception/exception.hpp:171:5: error: variable has incomplete type 'class BOOST_SYMBOL_VISIBLE'
+    exception;
+    ^
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/exception/exception.hpp:170:5: note: forward declaration of 'boost::BOOST_SYMBOL_VISIBLE'
+    BOOST_SYMBOL_VISIBLE
+    ^
+/Users/djkim/alice/sw/osx_arm64/boost/v1.83.0-alice2-local1/include/boost/exception/exception.hpp:191:36: error: expected ';' at end of declaration list
+            ~error_info_container() BOOST_NOEXCEPT_OR_NOTHROW
+                                   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+
+ *** Break *** segmentation violation
+[/usr/lib/system/libsystem_platform.dylib] _sigtramp (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] <deduplicated_symbol> (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::DeclUnloader::VisitDeclContext(clang::DeclContext*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::DeclUnloader::VisitFunctionDecl(clang::FunctionDecl*, bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::DeclUnloader::VisitDeclContext(clang::DeclContext*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::DeclUnloader::VisitRecordDecl(clang::RecordDecl*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::DeclUnloader::VisitClassTemplateSpecializationDecl(clang::ClassTemplateSpecializationDecl*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::TransactionUnloader::RevertTransaction(cling::Transaction*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::Interpreter::unload(cling::Transaction&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::IncrementalParser::commitTransaction(llvm::PointerIntPair<cling::Transaction*, 2u, cling::IncrementalParser::EParseResult, llvm::PointerLikeTypeTraits<cling::Transaction*>, llvm::PointerIntPairInfo<cling::Transaction*, 2u, llvm::PointerLikeTypeTraits<cling::Transaction*>>>&, bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::IncrementalParser::Compile(llvm::StringRef, cling::CompilationOptions const&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::Interpreter::parseForModule(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] ExecAutoParse(char const*, bool, cling::Interpreter*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] TCling::AutoParseImplRecurse(char const*, bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] TCling::AutoParse(char const*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] TClingCallbacks::LookupObject(clang::TagDecl*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::MultiplexInterpreterCallbacks::LookupObject(clang::TagDecl*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::MultiplexExternalSemaSource::CompleteType(clang::TagDecl*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Sema::RequireCompleteTypeImpl(clang::SourceLocation, clang::QualType, clang::Sema::CompleteTypeKind, clang::Sema::TypeDiagnoser*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Sema::CompareReferenceRelationship(clang::SourceLocation, clang::QualType, clang::QualType, clang::Sema::ReferenceConversionsScope::ReferenceConversions*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] FindConversionForRefInit(clang::Sema&, clang::ImplicitConversionSequence&, clang::QualType, clang::SourceLocation, clang::Expr*, clang::QualType, bool, bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] TryReferenceInit(clang::Sema&, clang::Expr*, clang::QualType, clang::SourceLocation, bool, bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Sema::AddOverloadCandidate(clang::FunctionDecl*, clang::DeclAccessPair, llvm::ArrayRef<clang::Expr*>, clang::OverloadCandidateSet&, bool, bool, bool, bool, clang::CallExpr::ADLCallKind, llvm::MutableArrayRef<clang::ImplicitConversionSequence>, clang::OverloadCandidateParamOrder, bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Sema::AddNonMemberOperatorCandidates(clang::UnresolvedSetImpl const&, llvm::ArrayRef<clang::Expr*>, clang::OverloadCandidateSet&, clang::TemplateArgumentListInfo*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Sema::LookupOverloadedBinOp(clang::OverloadCandidateSet&, clang::OverloadedOperatorKind, clang::UnresolvedSetImpl const&, llvm::ArrayRef<clang::Expr*>, bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Sema::CreateOverloadedBinOp(clang::SourceLocation, clang::BinaryOperatorKind, clang::UnresolvedSetImpl const&, clang::Expr*, clang::Expr*, bool, bool, clang::FunctionDecl*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] BuildOverloadedBinOp(clang::Sema&, clang::Scope*, clang::SourceLocation, clang::BinaryOperatorKind, clang::Expr*, clang::Expr*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Sema::BuildBinOp(clang::Scope*, clang::SourceLocation, clang::BinaryOperatorKind, clang::Expr*, clang::Expr*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Sema::ActOnBinOp(clang::Scope*, clang::SourceLocation, clang::tok::TokenKind, clang::Expr*, clang::Expr*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseRHSOfBinaryExpression(clang::ActionResult<clang::Expr*, true>, clang::prec::Level) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseAssignmentExpression(clang::Parser::TypeCastState) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseExpression(clang::Parser::TypeCastState) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseExprStatement(clang::Parser::ParsedStmtContext) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseStatementOrDeclarationAfterAttributes(llvm::SmallVector<clang::Stmt*, 32u>&, clang::Parser::ParsedStmtContext, clang::SourceLocation*, clang::ParsedAttributes&, clang::ParsedAttributes&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseStatementOrDeclaration(llvm::SmallVector<clang::Stmt*, 32u>&, clang::Parser::ParsedStmtContext, clang::SourceLocation*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseCompoundStatementBody(bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseStatementOrDeclarationAfterAttributes(llvm::SmallVector<clang::Stmt*, 32u>&, clang::Parser::ParsedStmtContext, clang::SourceLocation*, clang::ParsedAttributes&, clang::ParsedAttributes&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseStatementOrDeclaration(llvm::SmallVector<clang::Stmt*, 32u>&, clang::Parser::ParsedStmtContext, clang::SourceLocation*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseIfStatement(clang::SourceLocation*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseStatementOrDeclarationAfterAttributes(llvm::SmallVector<clang::Stmt*, 32u>&, clang::Parser::ParsedStmtContext, clang::SourceLocation*, clang::ParsedAttributes&, clang::ParsedAttributes&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseStatementOrDeclaration(llvm::SmallVector<clang::Stmt*, 32u>&, clang::Parser::ParsedStmtContext, clang::SourceLocation*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseCompoundStatementBody(bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseFunctionStatementBody(clang::Decl*, clang::Parser::ParseScope&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseLexedMethodDef(clang::Parser::LexedMethod&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseLexedMethodDefs(clang::Parser::ParsingClass&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseCXXMemberSpecification(clang::SourceLocation, clang::SourceLocation, clang::ParsedAttributes&, unsigned int, clang::Decl*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseClassSpecifier(clang::tok::TokenKind, clang::SourceLocation, clang::DeclSpec&, clang::Parser::ParsedTemplateInfo const&, clang::AccessSpecifier, bool, clang::Parser::DeclSpecContext, clang::ParsedAttributes&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseDeclarationSpecifiers(clang::DeclSpec&, clang::Parser::ParsedTemplateInfo const&, clang::AccessSpecifier, clang::Parser::DeclSpecContext, clang::Parser::LateParsedAttrList*, clang::ImplicitTypenameContext) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseDeclOrFunctionDefInternal(clang::ParsedAttributes&, clang::ParsedAttributes&, clang::ParsingDeclSpec&, clang::AccessSpecifier) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseDeclarationOrFunctionDefinition(clang::ParsedAttributes&, clang::ParsedAttributes&, clang::ParsingDeclSpec*, clang::AccessSpecifier) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseExternalDeclaration(clang::ParsedAttributes&, clang::ParsedAttributes&, clang::ParsingDeclSpec*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseInnerNamespace(llvm::SmallVector<clang::Parser::InnerNamespaceInfo, 4u> const&, unsigned int, clang::SourceLocation&, clang::ParsedAttributes&, clang::BalancedDelimiterTracker&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseNamespace(clang::DeclaratorContext, clang::SourceLocation&, clang::SourceLocation) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseDeclaration(clang::DeclaratorContext, clang::SourceLocation&, clang::ParsedAttributes&, clang::ParsedAttributes&, clang::SourceLocation*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseExternalDeclaration(clang::ParsedAttributes&, clang::ParsedAttributes&, clang::ParsingDeclSpec*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] clang::Parser::ParseTopLevelDecl(clang::OpaquePtr<clang::DeclGroupRef>&, clang::Sema::ModuleImportState&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::IncrementalParser::ParseOrWrapTopLevelDecl() (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::IncrementalParser::ParseInternal(llvm::StringRef) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::IncrementalParser::Compile(llvm::StringRef, cling::CompilationOptions const&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::Interpreter::loadHeader(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, cling::Transaction**) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::MetaSema::actOnLCommand(llvm::StringRef, cling::Transaction**) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::MetaParser::isLCommand(cling::MetaSema::ActionResult&) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::MetaParser::isCommand(cling::MetaSema::ActionResult&, cling::Value*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] cling::MetaProcessor::process(llvm::StringRef, cling::Interpreter::CompilationResult&, cling::Value*, bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] HandleInterpreterException(cling::MetaProcessor*, char const*, cling::Interpreter::CompilationResult&, cling::Value*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCling.6.36.04.so] TCling::ProcessLine(char const*, TInterpreter::EErrorCode*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCore.6.36.04.so] TApplication::ProcessLine(char const*, bool, int*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libRint.6.36.04.so] TRint::ProcessLineNr(char const*, char const*, int*) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libRint.6.36.04.so] TRint::HandleTermInput() (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCore.6.36.04.so] TUnixSystem::CheckDescriptors() (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCore.6.36.04.so] TUnixSystem::DispatchOneEvent(bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCore.6.36.04.so] TSystem::InnerLoop() (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCore.6.36.04.so] TSystem::Run() (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libCore.6.36.04.so] TApplication::Run(bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/lib/libRint.6.36.04.so] TRint::Run(bool) (no debug info)
+[/Users/djkim/alice/sw/osx_arm64/ROOT/v6-36-04-alice2-local1/bin/root.exe] main (no debug info)
+[/usr/lib/dyld] start (no debug info)
+Error: Pythia event generation failed!
