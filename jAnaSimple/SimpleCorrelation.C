@@ -24,7 +24,7 @@ using namespace std;
 // Configuration parameters
 const int kMaxMixEvents = 50;     // Number of events to mix
 const int kNDeltaPhiBins = 200;   // Number of delta phi bins (from JCorrAnalysisRun3.C)
-const int kNDeltaEtaBins = 32;    // Number of delta eta bins (from JCorrAnalysisRun3.C)
+const int kNDeltaEtaBins = 128;   // Number of delta eta bins (increased from 32 for finer resolution)
 const double kDeltaPhiMin = -0.5*TMath::Pi(); // Delta phi min (from JCorrAnalysisRun3.C)
 const double kDeltaPhiMax = 1.5*TMath::Pi();  // Delta phi max (from JCorrAnalysisRun3.C)
 const double kDeltaEtaMin = -4.8; // Delta eta min (from JCorrAnalysisRun3.C)

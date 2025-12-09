@@ -1,9 +1,33 @@
 #!/bin/bash
-# Run only analysis steps 3-5 (skip event generation)
+# Run only analysis steps 2-5 (skip event generation)
+# Usage: alienv setenv O2Physics/latest -c ./run_analysis_only.sh
 
 echo "========================================"
-echo "Running Analysis Steps 3-5 Only"
+echo "Running Analysis Steps 2-5 Only"
 echo "========================================"
+
+# Step 2: Run correlation analysis
+echo "========================================"
+echo "Step 2: Running Correlation Analysis"
+echo "========================================"
+cd jAnaSimple
+make clean && make
+
+if [ $? -ne 0 ]; then
+    echo "Error: Compilation failed!"
+    exit 1
+fi
+
+echo "../results/pythia_events.root" > input_trees.txt
+./SimpleCorrelation input_trees.txt ../results/correlations_with_jets.root
+
+if [ $? -ne 0 ]; then
+    echo "Error: Correlation analysis failed!"
+    exit 1
+fi
+cd ..
+echo "✓ Correlation analysis complete"
+echo ""
 
 echo "Step 3: Extracting Quantification with Fitting..."
 root -l -b << EOF

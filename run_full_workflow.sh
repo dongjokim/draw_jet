@@ -21,11 +21,7 @@ mkdir -p results
 echo "========================================"
 echo "Step 1: Generating Pythia Events"
 echo "========================================"
-root -l -b << EOF
-.L z01_GeneratePythiaEvents.C
-GeneratePythiaEvents($NEVENTS, "results/pythia_events.root", 0.4)
-.q
-EOF
+./run_standalone.sh $NEVENTS results/pythia_events.root 0.4
 
 if [ ! -f "results/pythia_events.root" ]; then
     echo "Error: Pythia event generation failed!"

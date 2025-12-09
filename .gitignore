@@ -1,0 +1,33 @@
+# Results and data files
+results/
+*.root
+
+# Log files
+*.log
+
+# Compiled binaries and libraries
+*.o
+*.so
+*.a
+*.dylib
+*.dSYM/
+jAnaSimple/SimpleCorrelation
+jAnaSimple/libSimpleCorr.so
+jAnaSimple/SimpleDict*
+
+# LaTeX auxiliary files
+*.aux
+*.out
+*.toc
+*.pdf
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Temporary files
+*.swp
+*.swo
+*~
