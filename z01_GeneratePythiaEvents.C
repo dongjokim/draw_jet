@@ -92,14 +92,14 @@ int GeneratePythiaEvents(int nEvents = 10000,
     pythia.readString("Beams:eCM = 5360.");   // 5.36 TeV
     pythia.readString("Tune:pp = 14");        // Monash 2013 tune
     pythia.readString("HardQCD:all = on");    // Hard QCD processes
-    pythia.readString("PhaseSpace:pTHatMin = 20.");  // Minimum pT hat
+    pythia.readString("PhaseSpace:pTHatMin = 3.");  // Minimum pT hat
     
     // Print Pythia configuration
     cout << "Pythia configuration:" << endl;
     cout << "  Center-of-mass energy: 5.36 TeV" << endl;
     cout << "  Tune: Monash 2013 (Tune:pp = 14)" << endl;
     cout << "  Hard QCD processes: on" << endl;
-    cout << "  Minimum pT hat: 20 GeV" << endl;
+    cout << "  Minimum pT hat: 3 GeV" << endl;
     
     // Initialize
     cout << "Initializing Pythia..." << endl;

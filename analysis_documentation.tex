@@ -309,15 +309,42 @@ Background levels increase systematically with $p_T$, from $\sim$10 at low $p_T$
 
 \subsection{Analysis Workflow}
 
-The complete analysis consists of five sequential steps:
+The complete analysis consists of six sequential steps:
 
 \begin{enumerate}
     \item \textbf{Event Generation} (\texttt{z01\_GeneratePythiaEvents.C}): Generate Pythia8 events with jet reconstruction
-    \item \textbf{Correlation Analysis} (\texttt{z02\_RunCorrelationAnalysis.sh}): Fill same-event and mixed-event correlations with proper normalization
+    \item \textbf{Correlation Analysis} (\texttt{jAnaSimple/SimpleCorrelation.C}): Fill same-event and mixed-event correlations with proper normalization
     \item \textbf{Quantification Extraction} (\texttt{z03\_ExtractQuantification.C}): Fit correlations with 2D Gaussian and extract metrics
     \item \textbf{Figure Generation} (\texttt{z04\_PlotResults.C}): Generate 2D plots, 1D projections, and inclusive vs. components comparisons
     \item \textbf{Table Generation} (\texttt{z05\_GenerateTables.C}): Create LaTeX tables with quantification results
+    \item \textbf{Eta Comparison Plots} (\texttt{z06\_CompareEtaProjections.C}): Generate overlay comparison plots with Gaussian fits
 \end{enumerate}
+
+\subsection{Binning Configuration}
+
+\subsubsection{Correlation Function Binning}
+The 2D correlation histograms use the following binning scheme (configured in \texttt{jAnaSimple/SimpleCorrelation.C}):
+
+\begin{table}[H]
+\centering
+\caption{Correlation histogram binning parameters}
+\begin{tabular}{lcc}
+\toprule
+Variable & Number of Bins & Range \\
+\midrule
+$\Delta\eta$ & 128 & $[-4.8, 4.8]$ \\
+$\Delta\phi$ & 200 & $[-\pi/2, 3\pi/2]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Key features:
+\begin{itemize}
+    \item \textbf{$\Delta\eta$ binning}: 128 bins provide $\Delta\eta = 0.075$ bin width (4× finer than typical analyses)
+    \item \textbf{$\Delta\phi$ binning}: 200 bins provide $\Delta\phi \approx 0.031$ rad bin width
+    \item Fine binning enables detailed structure visualization and accurate Gaussian fitting
+    \item Increased from initial 32 $\Delta\eta$ bins to improve resolution for fit validation
+\end{itemize}
 
 \subsection{Fit Configuration}
 
@@ -511,14 +538,59 @@ comparison_inclusive_trig{i}_assoc{j}.pdf
 \label{fig:comparison_high_pt}
 \end{figure}
 
+\subsection{$\Delta\eta$ Comparison Plots with Gaussian Fits}
+
+\subsubsection{Purpose}
+A specialized set of plots has been created to directly compare the $\Delta\eta$ projections across all three jet multiplicity categories on a single canvas, with overlaid Gaussian fit curves extracted from the quantification analysis.
+
+\subsubsection{Visualization}
+\begin{itemize}
+    \item \textbf{Data}: Histogram projections for each jet category
+    \begin{itemize}
+        \item Blue solid line: Single-jet events
+        \item Red solid line: Dijet events
+        \item Green solid line: Multi-jet events
+    \end{itemize}
+    \item \textbf{Fits}: Dashed lines showing Gaussian fit functions
+    \begin{itemize}
+        \item Same color coding as data
+        \item Extracted from 2D Gaussian fits in quantification step
+        \item Shows $f(\Delta\eta) = A \exp[-\Delta\eta^2/(2\sigma_\eta^2)] + B$
+    \end{itemize}
+    \item \textbf{Integration region}: $|\Delta\phi| < \pi/2$ (near-side region)
+\end{itemize}
+
+\subsubsection{Technical Details}
+The plots use high-resolution binning for detailed structure visualization:
+\begin{itemize}
+    \item $\Delta\eta$ bins: 128 bins over $[-4.8, 4.8]$
+    \item Bin width: $\Delta\eta = 0.075$ (4× finer than standard binning)
+    \item This fine binning reveals detailed correlation structure and validates fit quality
+\end{itemize}
+
+\subsubsection{Key Insights}
+These comparison plots enable direct assessment of:
+\begin{enumerate}
+    \item Relative widths of correlations across jet categories
+    \item Quality of Gaussian fits to the data
+    \item $p_T$-dependent evolution of $\sigma_\eta$ values
+    \item Category-to-category differences in longitudinal correlation structure
+\end{enumerate}
+
+\textbf{Generated files:}
+\begin{verbatim}
+eta_comparison_trig{i}_assoc{j}.pdf
+\end{verbatim}
+
 \subsection{Figure Summary}
 
-Total of 40 figures generated:
+Total of 50 figures generated:
 \begin{itemize}
     \item 10 × 2D correlation plots (3 panels each)
     \item 10 × $\Delta\phi$ projection plots
     \item 10 × $\Delta\eta$ projection plots
     \item 10 × Inclusive vs. components comparison plots (6 panels each)
+    \item 10 × $\Delta\eta$ comparison plots with fits
 \end{itemize}
 
 All figures are saved in PDF format in the \texttt{results/figures/} directory and can be directly included in presentations or publications. The figures shown above (Figures \ref{fig:corr_low_pt}--\ref{fig:comparison_high_pt}) represent the key findings of the analysis, demonstrating the transition from single-jet dominance at low $p_T$ to multi-jet dominance at high $p_T$.
@@ -664,12 +736,15 @@ The complete analysis code is available at:
 
 Key files:
 \begin{itemize}
-    \item \texttt{z01\_GeneratePythiaEvents.C} - Event generation
-    \item \texttt{jAnaSimple/SimpleCorrelation.C} - Correlation analysis
-    \item \texttt{z03\_ExtractQuantification.C} - Quantification with fitting
-    \item \texttt{z04\_PlotResults.C} - Figure generation
-    \item \texttt{z05\_GenerateTables.C} - Table generation
-    \item \texttt{run\_full\_workflow.sh} - Master script
+    \item \texttt{z01\_GeneratePythiaEvents.C} - Event generation with Pythia8 and FastJet
+    \item \texttt{jAnaSimple/SimpleCorrelation.C} - Two-particle correlation analysis (128 $\Delta\eta$ bins)
+    \item \texttt{z03\_ExtractQuantification.C} - Quantification with 2D Gaussian fitting
+    \item \texttt{z04\_PlotResults.C} - Figure generation (2D correlations, projections, comparisons)
+    \item \texttt{z05\_GenerateTables.C} - LaTeX table generation
+    \item \texttt{z06\_CompareEtaProjections.C} - Delta-eta comparison plots with Gaussian fits
+    \item \texttt{run\_full\_workflow.sh} - Master workflow script
+    \item \texttt{run\_analysis\_only.sh} - Rerun analysis steps 2-6 (skip event generation)
+    \item \texttt{run\_eta\_comparison.sh} - Generate eta comparison plots
 \end{itemize}
 
 \end{document}

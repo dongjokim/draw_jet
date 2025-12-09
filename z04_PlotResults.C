@@ -144,7 +144,7 @@ void PlotResults(const char* inputFile = "correlations.root",
         }
         if (!hasData) continue;
 
-        // Create canvas
+        // Create canvas for COLZ plots
         TCanvas* c = new TCanvas(Form("c_trig%d_assoc%d", trigBin, assocBin), "", 1800, 500);
         c->Divide(3, 1);
 
@@ -183,6 +183,43 @@ void PlotResults(const char* inputFile = "correlations.root",
         c->SaveAs(Form("%s/correlation_trig%d_assoc%d.png", outputDir, trigBin, assocBin));
         delete c;
         figureCount++;
+
+        // Create canvas for Surf3 plots (3D surface)
+        TCanvas* cSurf = new TCanvas(Form("c_surf_trig%d_assoc%d", trigBin, assocBin), "", 1800, 500);
+        cSurf->Divide(3, 1);
+
+        for (int i = 0; i < 3; i++) {
+            cSurf->cd(i+1);
+            gPad->SetRightMargin(0.05);
+            gPad->SetLeftMargin(0.12);
+            gPad->SetBottomMargin(0.12);
+            gPad->SetTheta(30);  // viewing angle theta
+            gPad->SetPhi(30);    // viewing angle phi
+
+            if (hists[i] && hists[i]->GetEntries() > 0) {
+                hists[i]->SetTitle(Form("%s Events;#Delta#eta;#Delta#phi;C(#Delta#eta,#Delta#phi)", titles[i].c_str()));
+                hists[i]->GetXaxis()->SetTitleSize(0.04);
+                hists[i]->GetYaxis()->SetTitleSize(0.04);
+                hists[i]->GetZaxis()->SetTitleSize(0.04);
+                hists[i]->GetXaxis()->SetLabelSize(0.03);
+                hists[i]->GetYaxis()->SetLabelSize(0.03);
+                hists[i]->GetZaxis()->SetLabelSize(0.03);
+                hists[i]->GetXaxis()->SetTitleOffset(1.5);
+                hists[i]->GetYaxis()->SetTitleOffset(1.5);
+                hists[i]->GetZaxis()->SetTitleOffset(1.3);
+                hists[i]->Draw("surf1 FB");
+            } else {
+                TLatex* tex = new TLatex(0.5, 0.5, Form("No %s events", titles[i].c_str()));
+                tex->SetNDC();
+                tex->SetTextAlign(22);
+                tex->SetTextSize(0.05);
+                tex->Draw();
+            }
+        }
+
+        cSurf->SaveAs(Form("%s/correlation_surf3_trig%d_assoc%d.pdf", outputDir, trigBin, assocBin));
+        cSurf->SaveAs(Form("%s/correlation_surf3_trig%d_assoc%d.png", outputDir, trigBin, assocBin));
+        delete cSurf;
     }
 
     // Create 1D projections for selected pT bins
@@ -409,10 +446,13 @@ void PlotResults(const char* inputFile = "correlations.root",
 
     cout << "\n========================================" << endl;
     cout << "Figures generated successfully!" << endl;
-    cout << "Generated " << figureCount << " 2D correlation plots" << endl;
+    cout << "Generated " << figureCount << " 2D correlation plots (COLZ)" << endl;
+    cout << "Generated " << figureCount << " 2D correlation plots (SURF3)" << endl;
     cout << "Generated " << figureCount << " Delta-phi projections" << endl;
     cout << "Generated " << figureCount << " Delta-eta projections" << endl;
     cout << "Generated " << figureCount << " Inclusive vs Components comparisons" << endl;
+    cout << "\nNote: All correlation functions C(Δη,Δφ) are normalized by the number of trigger particles:" << endl;
+    cout << "      C = (1/N_trig) × [S/(α×M)] where α = Integral(S)/Integral(M)" << endl;
     cout << "Output directory: " << outputDir << endl;
     cout << "========================================" << endl;
 }
